@@ -1,0 +1,10 @@
+.DS_Store
+.terraform
+src/github.com
+bin
+terraform-provider-enf
+pkg/darwin_amd64/enf.a
+crash.log
+terraform.tfstate
+terraform.tfstate.backup
+pkg
