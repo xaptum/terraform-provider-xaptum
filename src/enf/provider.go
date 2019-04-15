@@ -1,4 +1,4 @@
-package main
+package enf
 
 //fixed missing package with: go get github.com/hashicorp/terraform
 import (
@@ -32,7 +32,8 @@ func Provider() *schema.Provider {
         //authenticate
         jsonData := map[string]string{"username": "xap@admin", "token": "Test1234"}
         jsonValue, _ := json.Marshal(jsonData)
-        response, err := http.Post("https://dev.xaptum.io/api/xcr/v2/xauth", "application/json", bytes.NewBuffer(jsonValue))
+        base_url := "https://dev.xaptum.io"
+        response, err := http.Post(base_url + "/api/xcr/v2/xauth", "application/json", bytes.NewBuffer(jsonValue))
         if err != nil {
               fmt.Printf("The HTTP request failed with error %s\n", err)
         } else {
@@ -54,13 +55,31 @@ func Provider() *schema.Provider {
 
 
         return &schema.Provider{
+
+            //set environment variables 
+            Schema: map[string]*schema.Schema{
+                "api_token": {
+                    Type:        schema.TypeString,
+                    Optional:    true,
+                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_TOKEN", Cred_token_string),
+                    Description: "Token from authenticating with dev.xaptum.io",
+                },
+                "base_url": {
+                    Type:        schema.TypeString,
+                    Optional:    true,
+                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_URL", base_url),
+                    Description: "Base URL for authentication",
+                },
+            },
+
+
                 ResourcesMap: map[string]*schema.Resource{
-                                "enf_firewall": enfFirewall(),
+                                "enf_firewall": enfFirewallRule(),
                                 "enf_domain": enfDomain(),
                                 "enf_network": enfNetwork(),
                                 "enf_connection": enfConnection(),
-                		"enf_group": enfGroup(),
-                		"enf_endpoint": enfEndpoint(),
+                	            "enf_group": enfGroup(),
+                		        "enf_endpoint": enfEndpoint(),
                                 "enf_ratelimit": enfRatelimit(),
 
                 	},

@@ -1,4 +1,4 @@
-package main
+package enf
 
 import (
         "github.com/hashicorp/terraform/helper/schema"
@@ -10,12 +10,12 @@ import (
 
 )
 
-func enfFirewall() *schema.Resource {
+func enfFirewallRule() *schema.Resource {
         return &schema.Resource{
-                Create: enfFirewallCreate,
-                Read:   enfFirewallRead,
-                Update: enfFirewallUpdate,
-                Delete: enfFirewallDelete,
+                Create: enfFirewallRuleCreate,
+                Read:   enfFirewallRuleRead,
+                Update: enfFirewallRuleUpdate,
+                Delete: enfFirewallRuleDelete,
 
                 Schema: map[string]*schema.Schema{
                         "host": &schema.Schema{
@@ -35,7 +35,7 @@ func enfFirewall() *schema.Resource {
         }
 }
 
-func enfFirewallCreate(d *schema.ResourceData, m interface{}) error {
+func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
         host := d.Get("host").(string)
         network := d.Get("network").(string)
         url := "https://" + host + "/api/xfw/v1/" + network + "/rule"
@@ -67,7 +67,7 @@ func enfFirewallCreate(d *schema.ResourceData, m interface{}) error {
         return nil
 }
 
-func enfFirewallRead(d *schema.ResourceData, m interface{}) error {
+func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
 
         fmt.Println(Cred_token_byte)
 
@@ -87,11 +87,11 @@ func enfFirewallRead(d *schema.ResourceData, m interface{}) error {
         return nil
 }
 
-func enfFirewallUpdate(d *schema.ResourceData, m interface{}) error {
-        return enfFirewallRead(d, m)
+func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
+        return enfFirewallRuleRead(d, m)
 }
 
-func enfFirewallDelete(d *schema.ResourceData, m interface{}) error {
+func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
         host := d.Get("host").(string)
         network := d.Get("network").(string)
         id := d.Get("rule_id").(string)

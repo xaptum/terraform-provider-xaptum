@@ -1,4 +1,4 @@
-package main
+package enf
 
 import (
         "github.com/hashicorp/terraform/helper/schema"
