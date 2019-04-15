@@ -22,11 +22,17 @@ type Credentials struct {
     DomainNetwork string `json:"domain_network"`
 }
 
+type Config struct {
+    ApiToken  string
+    BaseURL string
+}
 
 
 //global token variable
 var Cred_token_byte []byte
 var Cred_token_string string  
+
+var config Config
 
 func Provider() *schema.Provider {
         //authenticate
@@ -72,6 +78,7 @@ func Provider() *schema.Provider {
                 },
             },
 
+            ConfigureFunc: providerConfigure,
 
                 ResourcesMap: map[string]*schema.Resource{
                                 "enf_firewall": enfFirewallRule(),
@@ -84,4 +91,12 @@ func Provider() *schema.Provider {
 
                 	},
         }
+}
+
+func providerConfigure(d *schema.ResourceData) (interface{}, error) {
+    config := Config{
+        ApiToken:  d.Get("api_key").(string),
+        BaseURL: d.Get("base_url").(string),
+    }
+    return &config, nil
 }
