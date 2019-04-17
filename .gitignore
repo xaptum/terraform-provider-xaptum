@@ -3,3 +3,5 @@
 src/github.com
 bin
 terraform-provider-enf
+pkg/darwin_amd64/enf.a
+

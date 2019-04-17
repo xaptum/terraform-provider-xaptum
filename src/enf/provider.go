@@ -8,18 +8,26 @@ import (
         "fmt"
         "bytes"
         "io/ioutil"
+        "os"
 )
-type Data struct {
-    Credentials Credentials
+type Response struct {
+    Data []Data
+    Page Pages
 }
 
-type Credentials struct {
+type Data struct {
     Username   string `json:"username"`
     Token   string `json:"token"`
-    UserID    string    `json:"user_id"`
+    UserID    int    `json:"user_id"`
     Type string `json:"type"`
-    DomainID string `json:"domain_id"`
+    DomainID int `json:"domain_id"`
     DomainNetwork string `json:"domain_network"`
+}
+
+type Pages struct {
+    Curr int `json:"curr"`
+    Next int `json: "next"`
+    Prev int `json: "prev"` 
 }
 
 type Config struct {
@@ -45,17 +53,24 @@ func Provider() *schema.Provider {
         } else {
                 data_body, _ := ioutil.ReadAll(response.Body)
 
-                var data Data
-                var cred Credentials
-                json.Unmarshal([]byte(data_body), &data)
+                var resp Response
+                json.Unmarshal([]byte(data_body), &resp)
 
-                cred = data.Credentials
-                var cred_token string
-                cred_token = cred.Token
-                Cred_token_string = cred_token
-                Cred_token_byte = []byte(cred_token)
+                fmt.Println("Returned data_body is: ", string(data_body))
+                fmt.Println("Returned data is: ", (resp))
+                fmt.Println("Creds: ", resp.Data)
+                fmt.Println("Token:", resp.Data[0].Token)
+                fmt.Println("Pages is: ", resp.Page)
+
+                //var cred_token string
+                //cred_token = cred.Token
+                //Cred_token_string = cred_token
+                //Cred_token_byte = []byte(cred_token)
+
+                os.Setenv("ENF_API_TOKEN", resp.Data[0].Token)
+                fmt.Println("ENF_API_TOKEN:", os.Getenv("ENF_API_TOKEN"))
+
         }
-
 
 
 
@@ -67,18 +82,18 @@ func Provider() *schema.Provider {
                 "api_token": {
                     Type:        schema.TypeString,
                     Optional:    true,
-                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_TOKEN", Cred_token_string),
+                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_TOKEN", nil),
                     Description: "Token from authenticating with dev.xaptum.io",
                 },
                 "base_url": {
                     Type:        schema.TypeString,
                     Optional:    true,
-                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_URL", base_url),
+                    DefaultFunc: schema.EnvDefaultFunc("ENF_API_URL", nil),
                     Description: "Base URL for authentication",
                 },
             },
 
-            ConfigureFunc: providerConfigure,
+            //ConfigureFunc: providerConfigure,
 
                 ResourcesMap: map[string]*schema.Resource{
                                 "enf_firewall": enfFirewallRule(),
@@ -93,10 +108,10 @@ func Provider() *schema.Provider {
         }
 }
 
-func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-    config := Config{
-        ApiToken:  d.Get("api_key").(string),
-        BaseURL: d.Get("base_url").(string),
-    }
-    return &config, nil
-}
+// func providerConfigure(d *schema.ResourceData) (interface{}, error) {
+//     config := Config{
+//         ApiToken:  d.Get("api_key").(string),
+//         BaseURL: d.Get("base_url").(string),
+//     }
+//     return &config, nil
+// }
