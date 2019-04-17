@@ -1,9 +1,10 @@
-provider "enf" {}
+provider "enf" {
+  username = "xap@uscc"
+  password = "Test1234"
+}
 
 resource "enf_firewall" "ex" {
-  host    = "xaptum.io"
-  network = "test"
-  rule_id = "1"
+  network = "2607:8f80:8080:8::/64"
 }
 
 # resource "enf_connection" "ex" {}

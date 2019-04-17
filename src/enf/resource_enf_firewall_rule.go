@@ -7,6 +7,7 @@ import (
         "io/ioutil"
         "encoding/json"
         "bytes"
+        "log"
 
 )
 
@@ -18,16 +19,7 @@ func enfFirewallRule() *schema.Resource {
                 Delete: enfFirewallRuleDelete,
 
                 Schema: map[string]*schema.Schema{
-                        "host": &schema.Schema{
-                                Type:     schema.TypeString,
-                                Required: true,
-                        },
-
                         "network": &schema.Schema{
-                                Type:     schema.TypeString,
-                                Required: true,
-                        },
-                        "rule_id": &schema.Schema{
                                 Type:     schema.TypeString,
                                 Required: true,
                         },
@@ -36,14 +28,20 @@ func enfFirewallRule() *schema.Resource {
 }
 
 func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
-        host := d.Get("host").(string)
+
+
+        domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
-        url := "https://" + host + "/api/xfw/v1/" + network + "/rule"
+        url := domain_url + "/api/xfw/v1/" + network + "/rule"
+
+
+
+
         jsonData := map[string]string{"rule": "400"}
         jsonValue, _ := json.Marshal(jsonData)
 
 
-        var bearer = "Bearer " + Cred_token_string
+        var bearer = "Bearer" + m.(*EnfClient).ApiToken
 
         // Create a new request
         req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
@@ -52,16 +50,17 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
         req.Header.Add("Authorization", bearer)
 
         //create client to make the request
-        client := &http.Client{}
+        client := m.(*EnfClient).HTTPClient
         response, err := client.Do(req)
         if err != nil {
-                fmt.Printf("The HTTP request failed with error %s\n", err)
+                log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
+                return err        
         } else {
             data, _ := ioutil.ReadAll(response.Body)
-            fmt.Println(string(data))
+            log.Printf("IN FIREWALL.GO CREATE: ", string(data))
         }
 
-        d.SetId(network)
+        d.SetId(network)//TODO: response should have ID
 
 
         return nil
@@ -69,36 +68,51 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
 
 func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
 
-        fmt.Println(Cred_token_byte)
-
-        host := d.Get("host").(string)
+        domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
-        url := "https://" + host + "/api/xfw/v1/" + network + "/rule"
+        url := domain_url + "/api/xfw/v1/" + network + "/rule"
 
-        response, err := http.Get(url)
+
+        var bearer = "Bearer" + m.(*EnfClient).ApiToken
+
+        // Create a new request
+        req, err := http.NewRequest("GET", url, nil)
+
+         // add authorization header to the request
+        req.Header.Add("Authorization", bearer)
+
+        //create client to make the request
+        client := m.(*EnfClient).HTTPClient
+        response, err := client.Do(req)
         if err != nil {
-                fmt.Printf("The HTTP request failed with error %s\n", err)
+                log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
+                return err
         } else {
             data, _ := ioutil.ReadAll(response.Body)
-            fmt.Println(string(data))
+            log.Printf("IN FIREWALL.GO READ: ", string(data))
+
         }
 
-        d.SetId(network) //sets Id, if blank then is destroyed 
+        d.SetId(network)//TODO: response should have ID
         return nil
 }
 
 func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
-        return enfFirewallRuleRead(d, m)
+        //TODO: do delete and add API calls here
+
+
+        //return enfFirewallRuleRead(d, m)
 }
 
 func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
-        host := d.Get("host").(string)
+        
+        domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
         id := d.Get("rule_id").(string)
-        url := "https://" + host + "/api/xfw/v1/" + network + "/rule/" + id
+        url := domain_url + "/api/xfw/v1/" + network + "/rule/" + id
 
 
-        var bearer = "Bearer " + Cred_token_string
+        var bearer = "Bearer" + m.(*EnfClient).ApiToken
 
         // Create a new request
         req, err := http.NewRequest("DELETE", url, nil)
@@ -107,7 +121,7 @@ func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
         req.Header.Add("Authorization", bearer)
 
         //create client to make the request
-        client := &http.Client{}
+        client := m.(*EnfClient).HTTPClient
         response, err := client.Do(req)
         if err != nil {
                 fmt.Printf("The HTTP request failed with error %s\n", err)
@@ -116,7 +130,7 @@ func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
             fmt.Println(string(data))
         }
 
-        d.SetId(network)
+        d.SetId(network)//TODO: response should have ID
 
         return nil
 }
