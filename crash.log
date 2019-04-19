@@ -1,104 +1,105 @@
-2019/04/15 16:31:02 [INFO] Terraform version: 0.11.13  
-2019/04/15 16:31:02 [INFO] Go runtime version: go1.12
-2019/04/15 16:31:02 [INFO] CLI args: []string{"/usr/local/Cellar/terraform/0.11.13/bin/terraform", "plan"}
-2019/04/15 16:31:02 [DEBUG] Attempting to open CLI config file: /Users/vinayshanbhag/.terraformrc
-2019/04/15 16:31:02 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
-2019/04/15 16:31:02 [INFO] CLI command args: []string{"plan"}
-2019/04/15 16:31:02 [INFO] command: empty terraform config, returning nil
-2019/04/15 16:31:02 [DEBUG] command: no data state file found for backend config
-2019/04/15 16:31:02 [DEBUG] New state was assigned lineage "4e0ed064-e275-452b-1744-d8c10ac09b0a"
-2019/04/15 16:31:02 [INFO] command: backend initialized: <nil>
-2019/04/15 16:31:02 [DEBUG] checking for provider in "."
-2019/04/15 16:31:02 [WARN] found legacy provider "terraform-provider-enf"
-2019/04/15 16:31:02 [DEBUG] checking for provider in "/usr/local/Cellar/terraform/0.11.13/bin"
-2019/04/15 16:31:02 [DEBUG] checking for provider in ".terraform/plugins/darwin_amd64"
-2019/04/15 16:31:02 [DEBUG] found valid plugin: "enf", "0.0.0", "/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf"
-2019/04/15 16:31:02 [DEBUG] checking for provisioner in "."
-2019/04/15 16:31:02 [DEBUG] checking for provisioner in "/usr/local/Cellar/terraform/0.11.13/bin"
-2019/04/15 16:31:02 [DEBUG] checking for provisioner in ".terraform/plugins/darwin_amd64"
-2019/04/15 16:31:02 [INFO] command: backend <nil> is not enhanced, wrapping in local
-2019/04/15 16:31:02 [INFO] backend/local: starting Plan operation
-2019/04/15 16:31:02 [DEBUG] New state was assigned lineage "4f4fd0fb-572d-80c5-e8eb-dc9b7c3f586d"
-2019/04/15 16:31:03 [INFO] terraform: building graph: GraphTypeInput
-2019/04/15 16:31:03 [TRACE] ConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ConfigTransformer:
+2019/04/19 11:49:18 [INFO] Terraform version: 0.11.13  
+2019/04/19 11:49:18 [INFO] Go runtime version: go1.12
+2019/04/19 11:49:18 [INFO] CLI args: []string{"/usr/local/Cellar/terraform/0.11.13/bin/terraform", "destroy"}
+2019/04/19 11:49:18 [DEBUG] Attempting to open CLI config file: /Users/vinayshanbhag/.terraformrc
+2019/04/19 11:49:18 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/04/19 11:49:18 [INFO] CLI command args: []string{"destroy"}
+2019/04/19 11:49:18 [INFO] command: empty terraform config, returning nil
+2019/04/19 11:49:18 [DEBUG] command: no data state file found for backend config
+2019/04/19 11:49:18 [DEBUG] New state was assigned lineage "a586692c-4d3e-cd5d-c1d6-742d2b62649d"
+2019/04/19 11:49:18 [INFO] command: backend initialized: <nil>
+2019/04/19 11:49:18 [DEBUG] checking for provider in "."
+2019/04/19 11:49:18 [WARN] found legacy provider "terraform-provider-enf"
+2019/04/19 11:49:18 [DEBUG] checking for provider in "/usr/local/Cellar/terraform/0.11.13/bin"
+2019/04/19 11:49:18 [DEBUG] checking for provider in ".terraform/plugins/darwin_amd64"
+2019/04/19 11:49:18 [DEBUG] found valid plugin: "enf", "0.0.0", "/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf"
+2019/04/19 11:49:18 [DEBUG] checking for provisioner in "."
+2019/04/19 11:49:18 [DEBUG] checking for provisioner in "/usr/local/Cellar/terraform/0.11.13/bin"
+2019/04/19 11:49:18 [DEBUG] checking for provisioner in ".terraform/plugins/darwin_amd64"
+2019/04/19 11:49:18 [INFO] command: backend <nil> is not enhanced, wrapping in local
+2019/04/19 11:49:18 [INFO] backend/local: starting Apply operation
+2019/04/19 11:49:18 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:18 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:18 [INFO] terraform: building graph: GraphTypeInput
+2019/04/19 11:49:18 [TRACE] ConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.LocalTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.LocalTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OutputTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OutputTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Beginning...
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc000408620), RawConfig:(*config.RawConfig)(0xc0004085b0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [DEBUG] Resource state not found for "enf_firewall.ex": enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachStateTransformer:
+2019/04/19 11:49:18 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000312280), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachStateTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootVariableTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootVariableTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
-2019/04/15 16:31:03 [TRACE] ProviderConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Attach provider request: []string{} enf
-2019/04/15 16:31:03 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000408540)}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
-
-enf_firewall.ex - *terraform.NodeAbstractResource
-provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+2019/04/19 11:49:18 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:18 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] resource enf_firewall.ex using provider provider.enf
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:18 [DEBUG] resource enf_firewall.ex using provider provider.enf
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.PruneProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ParentProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.graphTransformerMulti:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.graphTransformerMulti:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "provider.enf" references: []
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ReferenceTransformer:
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ReferenceTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -106,7 +107,7 @@ meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TargetsTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TargetsTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -114,18 +115,7 @@ meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProviderTransformer:
-
-enf_firewall.ex - *terraform.NodeAbstractResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodeAbstractResource
-  provider.enf - *terraform.NodeApplyableProvider
-provider.enf - *terraform.NodeApplyableProvider
-provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodeAbstractResource
-  provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CloseProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -136,7 +126,18 @@ provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
   enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+provider.enf (close) - *terraform.graphNodeCloseProvider
+  enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -150,7 +151,7 @@ provider.enf (close) - *terraform.graphNodeCloseProvider
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
 
 enf_firewall.ex - *terraform.NodeAbstractResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -162,151 +163,154 @@ provider.enf (close) - *terraform.graphNodeCloseProvider
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [DEBUG] Starting graph walk: walkInput
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "root"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "root", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "provider.enf"
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': evaluating
-2019/04/15 16:31:03 [TRACE] [walkInput] Entering eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInitProvider
-2019-04-15T16:31:03.141-0500 [DEBUG] plugin: starting plugin: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf args=[/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf]
-2019-04-15T16:31:03.145-0500 [DEBUG] plugin: waiting for RPC address: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf
-2019-04-15T16:31:03.614-0500 [DEBUG] plugin.terraform-provider-enf: plugin address: timestamp=2019-04-15T16:31:03.614-0500 address=/var/folders/7y/0y93mvln00n0rmnyb3h2927r0000gn/T/plugin484916428 network=unix
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalOpFilter
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalGetProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInterpolateProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInputProvider
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] [walkInput] Exiting eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': walking
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf (close)': walking
-2019/04/15 16:31:03 [TRACE] [walkInput] Entering eval tree: meta.count-boundary (count boundary fixup)
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
-2019/04/15 16:31:03 [TRACE] [walkInput] Exiting eval tree: meta.count-boundary (count boundary fixup)
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf (close)': evaluating
-2019/04/15 16:31:03 [TRACE] [walkInput] Entering eval tree: provider.enf (close)
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalCloseProvider
-2019/04/15 16:31:03 [TRACE] [walkInput] Exiting eval tree: provider.enf (close)
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "root"
-2019/04/15 16:31:03 [TRACE] vertex 'root.root': walking
-2019/04/15 16:31:03 [INFO] terraform: building graph: GraphTypeValidate
-2019/04/15 16:31:03 [TRACE] ConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ConfigTransformer:
+2019/04/19 11:49:18 [DEBUG] Starting graph walk: walkInput
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "root"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "provider.enf"
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': evaluating
+2019/04/19 11:49:18 [TRACE] [walkInput] Entering eval tree: provider.enf
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInitProvider
+2019-04-19T11:49:18.884-0500 [DEBUG] plugin: starting plugin: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf args=[/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf]
+2019-04-19T11:49:18.888-0500 [DEBUG] plugin: waiting for RPC address: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf
+2019-04-19T11:49:18.910-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:18 [DEBUG] Got into Provider()
+2019-04-19T11:49:18.911-0500 [DEBUG] plugin.terraform-provider-enf: plugin address: timestamp=2019-04-19T11:49:18.911-0500 address=/var/folders/7y/0y93mvln00n0rmnyb3h2927r0000gn/T/plugin474081674 network=unix
+2019-04-19T11:49:18.912-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:18 [DEBUG] Got into Provider()
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInputProvider
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] [walkInput] Exiting eval tree: provider.enf
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf (close)': walking
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf (close)': evaluating
+2019/04/19 11:49:18 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2019/04/19 11:49:18 [TRACE] [walkInput] Entering eval tree: provider.enf (close)
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalCloseProvider
+2019/04/19 11:49:18 [TRACE] [walkInput] Entering eval tree: meta.count-boundary (count boundary fixup)
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/04/19 11:49:18 [TRACE] [walkInput] Exiting eval tree: provider.enf (close)
+2019/04/19 11:49:18 [TRACE] EvalCountFixZeroOneBoundaryGlobal: count 1, search "enf_firewall.ex.0", replace "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] [walkInput] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "root"
+2019/04/19 11:49:18 [TRACE] vertex 'root.root': walking
+2019/04/19 11:49:18 [INFO] terraform: building graph: GraphTypeValidate
+2019/04/19 11:49:18 [TRACE] ConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.LocalTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.LocalTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OutputTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OutputTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Beginning...
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc000408620), RawConfig:(*config.RawConfig)(0xc0004085b0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [DEBUG] Resource state not found for "enf_firewall.ex": enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachStateTransformer:
+2019/04/19 11:49:18 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000312280), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachStateTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootVariableTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootVariableTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
-2019/04/15 16:31:03 [TRACE] ProviderConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Attach provider request: []string{} enf
-2019/04/15 16:31:03 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000408540)}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+2019/04/19 11:49:18 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:18 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.MissingProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] resource enf_firewall.ex using provider provider.enf
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderTransformer:
+2019/04/19 11:49:18 [DEBUG] resource enf_firewall.ex using provider provider.enf
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.PruneProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ParentProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.graphTransformerMulti:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.graphTransformerMulti:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.MissingProvisionerTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.MissingProvisionerTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProvisionerTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProvisionerTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.graphTransformerMulti:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.graphTransformerMulti:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "provider.enf" references: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ReferenceTransformer:
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ReferenceTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -314,7 +318,7 @@ meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TargetsTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TargetsTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -322,18 +326,7 @@ meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProviderTransformer:
-
-enf_firewall.ex - *terraform.NodeValidatableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodeValidatableResource
-  provider.enf - *terraform.NodeApplyableProvider
-provider.enf - *terraform.NodeApplyableProvider
-provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodeValidatableResource
-  provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CloseProviderTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -344,7 +337,18 @@ provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
   enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+enf_firewall.ex - *terraform.NodeValidatableResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex - *terraform.NodeValidatableResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+provider.enf (close) - *terraform.graphNodeCloseProvider
+  enf_firewall.ex - *terraform.NodeValidatableResource
+  provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -358,7 +362,7 @@ provider.enf (close) - *terraform.graphNodeCloseProvider
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResource
   provider.enf - *terraform.NodeApplyableProvider
@@ -370,347 +374,721 @@ provider.enf (close) - *terraform.graphNodeCloseProvider
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [DEBUG] Starting graph walk: walkValidate
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "root"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "root", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "provider.enf"
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': evaluating
-2019/04/15 16:31:03 [TRACE] [walkValidate] Entering eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInitProvider
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalOpFilter
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalGetProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInterpolateProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalValidateProvider
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] [walkValidate] Exiting eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': evaluating
-2019/04/15 16:31:03 [TRACE] [walkValidate] Entering eval tree: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInterpolate
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalIf
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalValidateCount
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
-2019/04/15 16:31:03 [TRACE] [walkValidate] Exiting eval tree: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': expanding/walking dynamic subgraph
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+2019/04/19 11:49:18 [DEBUG] Starting graph walk: walkValidate
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "root"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "provider.enf"
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': evaluating
+2019/04/19 11:49:18 [TRACE] [walkValidate] Entering eval tree: provider.enf
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInitProvider
+2019-04-19T11:49:18.918-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:18 [DEBUG] Got into Provider()
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalValidateProvider
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] [walkValidate] Exiting eval tree: provider.enf
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': evaluating
+2019/04/19 11:49:18 [TRACE] [walkValidate] Entering eval tree: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalValidateCount
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/04/19 11:49:18 [TRACE] [walkValidate] Exiting eval tree: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': expanding/walking dynamic subgraph
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ResourceCountTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResourceInstance
-2019/04/15 16:31:03 [DEBUG] Resource state not found for "enf_firewall.ex": enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachStateTransformer:
+2019/04/19 11:49:18 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000312280), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachStateTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResourceInstance
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TargetsTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TargetsTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResourceInstance
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ReferenceTransformer:
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ReferenceTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResourceInstance
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootTransformer:
 
 enf_firewall.ex - *terraform.NodeValidatableResourceInstance
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.enf_firewall.ex': evaluating
-2019/04/15 16:31:03 [TRACE] [walkValidate] Entering eval tree: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalGetProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInterpolate
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalValidateResource
-2019/04/15 16:31:03 [TRACE] [walkValidate] Exiting eval tree: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
-2019/04/15 16:31:03 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (count boundary fixup)
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
-2019/04/15 16:31:03 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (count boundary fixup)
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf (close)': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf (close)': evaluating
-2019/04/15 16:31:03 [TRACE] [walkValidate] Entering eval tree: provider.enf (close)
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalCloseProvider
-2019/04/15 16:31:03 [TRACE] [walkValidate] Exiting eval tree: provider.enf (close)
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "root"
-2019/04/15 16:31:03 [TRACE] vertex 'root.root': walking
-2019/04/15 16:31:03 [INFO] backend/local: plan calling Refresh
-2019/04/15 16:31:03 [INFO] terraform: building graph: GraphTypeRefresh
-2019/04/15 16:31:03 [TRACE] No managed resources in state during refresh, skipping managed resource transformer
-2019/04/15 16:31:03 [TRACE] ConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ConfigTransformer:
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.enf_firewall.ex': evaluating
+2019/04/19 11:49:18 [TRACE] [walkValidate] Entering eval tree: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/04/19 11:49:18 [TRACE] [walkValidate] Exiting eval tree: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf (close)': walking
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:18 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf (close)': evaluating
+2019/04/19 11:49:18 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2019/04/19 11:49:18 [TRACE] [walkValidate] Entering eval tree: provider.enf (close)
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalCloseProvider
+2019/04/19 11:49:18 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (count boundary fixup)
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/04/19 11:49:18 [TRACE] [walkValidate] Exiting eval tree: provider.enf (close)
+2019/04/19 11:49:18 [TRACE] EvalCountFixZeroOneBoundaryGlobal: count 1, search "enf_firewall.ex.0", replace "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "root"
+2019/04/19 11:49:18 [TRACE] vertex 'root.root': walking
+2019/04/19 11:49:18 [INFO] backend/local: apply calling Refresh
+2019/04/19 11:49:18 [INFO] terraform: building graph: GraphTypeRefresh
+2019/04/19 11:49:18 [TRACE] ConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ConfigTransformer:
 
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [TRACE] ConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ConfigTransformer:
 
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachStateTransformer:
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
 
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Beginning...
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc0003e8780), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachStateTransformer:
 
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootVariableTransformer:
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:18 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:18 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
 
-2019/04/15 16:31:03 [TRACE] ProviderConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Attach provider request: []string{} enf
-2019/04/15 16:31:03 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000408540)}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootVariableTransformer:
 
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:18 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:18 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.MissingProviderTransformer:
 
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderTransformer:
+2019/04/19 11:49:18 [DEBUG] resource enf_firewall.ex using provider provider.enf
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ProviderTransformer:
 
-provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] pruning unused provider provider.enf
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.PruneProviderTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ParentProviderTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.graphTransformerMulti:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.LocalTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OutputTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ReferenceTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TargetsTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProviderTransformer:
-
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootTransformer:
-
-root - terraform.graphNodeRoot
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
-
-root - terraform.graphNodeRoot
-2019/04/15 16:31:03 [DEBUG] Starting graph walk: walkRefresh
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "root"
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "root"
-2019/04/15 16:31:03 [TRACE] vertex 'root.root': walking
-2019/04/15 16:31:03 [INFO] backend/local: plan calling Plan
-2019/04/15 16:31:03 [INFO] terraform: building graph: GraphTypePlan
-2019/04/15 16:31:03 [TRACE] ConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ConfigTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.LocalTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OutputTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Beginning...
-2019/04/15 16:31:03 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc000408620), RawConfig:(*config.RawConfig)(0xc0004085b0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [DEBUG] Resource state not found for "enf_firewall.ex": enf_firewall.ex
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.AttachStateTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootVariableTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-2019/04/15 16:31:03 [TRACE] ProviderConfigTransformer: Starting for path: []
-2019/04/15 16:31:03 [TRACE] Attach provider request: []string{} enf
-2019/04/15 16:31:03 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000408540)}
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.MissingProviderTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
-provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] resource enf_firewall.ex using provider provider.enf
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ProviderTransformer:
-
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.PruneProviderTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ParentProviderTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.graphTransformerMulti:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.graphTransformerMulti:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.LocalTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.OutputTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
-2019/04/15 16:31:03 [DEBUG] ReferenceTransformer: "provider.enf" references: []
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.ReferenceTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:18 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.ReferenceTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TargetsTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TargetsTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.CloseProviderTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodePlannableResource
+  enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.RootTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodePlannableResource
+  enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.RootTransformer:
+2019/04/19 11:49:18 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
-  provider.enf - *terraform.NodeApplyableProvider
-meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex - *terraform.NodeRefreshableManagedResource
   provider.enf - *terraform.NodeApplyableProvider
 provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodePlannableResource
+  enf_firewall.ex - *terraform.NodeRefreshableManagedResource
+2019/04/19 11:49:18 [DEBUG] Starting graph walk: walkRefresh
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
+2019/04/19 11:49:18 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
+2019/04/19 11:49:18 [TRACE] dag/walk: walking "provider.enf"
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': walking
+2019/04/19 11:49:18 [TRACE] vertex 'root.provider.enf': evaluating
+2019/04/19 11:49:18 [TRACE] [walkRefresh] Entering eval tree: provider.enf
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInitProvider
+2019-04-19T11:49:18.927-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:18 [DEBUG] Got into Provider()
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:18 [TRACE] root: eval: *terraform.EvalConfigProvider
+2019-04-19T11:49:18.929-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:18 [DEBUG] Got into providerConfigure()
+2019-04-19T11:49:19.461-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Client response StatusCode is: %!(EXTRA int=200)
+2019-04-19T11:49:19.461-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Returned data_body is: %!(EXTRA string={"data":[{"username":"xap@admin","token":"gKMUtaFMwSxOpEFtGGRU6PRjSxlZlSuHQcMD7gJ5C1lXzgUxCTWWixAW7Pww9BjkiO7XPgAghsum/q3BHvxBYDS8SM/I+eZUPPn0/ifRaZrUMx7GqbRAxES88EPLO6LH0G33Rr/fAjvPR9zr1pXDrN+Ethpj0pfW","user_id":66,"type":"DOMAIN_ADMIN","domain_id":1,"domain_network":"fd00:8f80:8000::/48"}],"page":{"curr":-1,"next":-1,"prev":-1}})
+2019-04-19T11:49:19.461-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Returned data is: %!(EXTRA enf.Response={[{xap@admin gKMUtaFMwSxOpEFtGGRU6PRjSxlZlSuHQcMD7gJ5C1lXzgUxCTWWixAW7Pww9BjkiO7XPgAghsum/q3BHvxBYDS8SM/I+eZUPPn0/ifRaZrUMx7GqbRAxES88EPLO6LH0G33Rr/fAjvPR9zr1pXDrN+Ethpj0pfW 66 DOMAIN_ADMIN 1 fd00:8f80:8000::/48}] {-1 -1 -1}})
+2019-04-19T11:49:19.461-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Creds: %!(EXTRA []enf.Data=[{xap@admin gKMUtaFMwSxOpEFtGGRU6PRjSxlZlSuHQcMD7gJ5C1lXzgUxCTWWixAW7Pww9BjkiO7XPgAghsum/q3BHvxBYDS8SM/I+eZUPPn0/ifRaZrUMx7GqbRAxES88EPLO6LH0G33Rr/fAjvPR9zr1pXDrN+Ethpj0pfW 66 DOMAIN_ADMIN 1 fd00:8f80:8000::/48}])
+2019-04-19T11:49:19.461-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Token:%!(EXTRA string=gKMUtaFMwSxOpEFtGGRU6PRjSxlZlSuHQcMD7gJ5C1lXzgUxCTWWixAW7Pww9BjkiO7XPgAghsum/q3BHvxBYDS8SM/I+eZUPPn0/ifRaZrUMx7GqbRAxES88EPLO6LH0G33Rr/fAjvPR9zr1pXDrN+Ethpj0pfW)
+2019-04-19T11:49:19.462-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 Pages is: %!(EXTRA enf.Pages={-1 -1 -1})
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Exiting eval tree: provider.enf
+2019/04/19 11:49:19 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': evaluating
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Entering eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Exiting eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': expanding/walking dynamic subgraph
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [TRACE] OrphanResourceCount: Starting...
+2019/04/19 11:49:19 [TRACE] OrphanResourceCount: Checking: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc0003e8780), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.RootTransformer:
+
+enf_firewall.ex - *terraform.NodeRefreshableManagedResourceInstance
+2019/04/19 11:49:19 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': evaluating
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Entering eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalReadState
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalRefresh
+2019-04-19T11:49:19.465-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 d is: %!(EXTRA *schema.ResourceData=&{map[network:0xc0003fa000] <nil> 0xc00061a410 <nil> map[] 0xc0005d4c60 <nil> <nil> <nil> false map[] {{0 0} 0} false false})
+2019-04-19T11:49:19.465-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] domain_url from m interface is: %!(EXTRA string=https://dev.xaptum.io)
+2019-04-19T11:49:19.466-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() request is: %!(EXTRA *http.Request=&{GET https://dev.xaptum.io/api/xfw/v1/fd00:8f80:8000::/64/rule HTTP/1.1 1 1 map[Accept:[application/json] Authorization:[Bearer gKMUtaFMwSxOpEFtGGRU6PRjSxlZlSuHQcMD7gJ5C1lXzgUxCTWWixAW7Pww9BjkiO7XPgAghsum/q3BHvxBYDS8SM/I+eZUPPn0/ifRaZrUMx7GqbRAxES88EPLO6LH0G33Rr/fAjvPR9zr1pXDrN+Ethpj0pfW] Content-Type:[application/json]] <nil> <nil> 0 [] false dev.xaptum.io map[] map[] <nil> map[]   <nil> <nil> <nil> <nil>})
+2019-04-19T11:49:19.556-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() error is: %!(EXTRA <nil>)
+2019-04-19T11:49:19.556-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() response code is: %!(EXTRA int=200)
+2019-04-19T11:49:19.556-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() response is: %!(EXTRA *http.Response=&{200 OK 200 HTTP/2.0 2 0 map[Access-Control-Allow-Headers:[authorization,content-type,accept] Access-Control-Allow-Methods:[GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH] Access-Control-Allow-Origin:[/] Content-Length:[540] Content-Type:[application/json] Date:[Fri, 19 Apr 2019 16:49:19 GMT] Server:[Cowboy] Vary:[accept] Xaptum-Refresh-Token:[Dy8Z4T/tw0O8RrQweXWZcvF+GqKGssJU4ayczZnNCGNbc0O3gnj9//PLqC0E5i5wNx6fvUkQ+0UCdGHwmekI0Op+S+6zRwox5h5MKDcWUvC6xueSWrFJnjMH/FnbpC7jDCRPtw19gxUuVuz1SZhepD6ZLL9kHLj5]] {0xc0003e6a00} 540 [] false false map[] 0xc000162500 0xc00022dc30})
+2019-04-19T11:49:19.556-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() response.Body: %!(EXTRA http.http2transportResponseBody={0xc0003e6a00})
+2019-04-19T11:49:19.557-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() string(data): %!(EXTRA string=[{"id":"0690da96-7a3b-4ebd-8e58-74b5997365d9","priority":99,"protocol":"ICMP6","direction":"EGRESS","source_ip":"fd00:8f80:8000:0000::/64","source_port":0,"dest_ip":"*","dest_port":0,"ack":"undefined","action":"ACCEPT","ip_family":"IP6","network":"fd00:8f80:8000::/64"},{"id":"4cea07b1-7164-4405-a64f-4e26753d1184","priority":98,"protocol":"ICMP6","direction":"INGRESS","source_ip":"*","source_port":0,"dest_ip":"fd00:8f80:8000:0000::/64","dest_port":0,"ack":"undefined","action":"ACCEPT","ip_family":"IP6","network":"fd00:8f80:8000::/64"}])
+2019-04-19T11:49:19.557-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() fw_rule[0] is: %!(EXTRA enf.firewallRule={0690da96-7a3b-4ebd-8e58-74b5997365d9 99 ICMP6 EGRESS fd00:8f80:8000:0000::/64 0 * 0 undefined ACCEPT IP6 fd00:8f80:8000::/64})
+2019-04-19T11:49:19.557-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:19 [DEBUG] enfFirewallRuleRead() fw_rule.Id is: %!(EXTRA string=0690da96-7a3b-4ebd-8e58-74b5997365d9)
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalWriteState
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Exiting eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] dag/walk: walking "provider.enf (close)"
+2019/04/19 11:49:19 [TRACE] vertex 'root.provider.enf (close)': walking
+2019/04/19 11:49:19 [TRACE] vertex 'root.provider.enf (close)': evaluating
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Entering eval tree: provider.enf (close)
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalCloseProvider
+2019/04/19 11:49:19 [TRACE] [walkRefresh] Exiting eval tree: provider.enf (close)
+2019/04/19 11:49:19 [INFO] backend/local: apply calling Plan
+2019/04/19 11:49:19 [INFO] terraform: building graph: GraphTypePlanDestroy
+2019/04/19 11:49:19 [TRACE] StateTransformer: starting
+2019/04/19 11:49:19 [TRACE] StateTransformer: Module: [root]
+2019/04/19 11:49:19 [TRACE] StateTransformer: Resource "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc0000b6410), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.StateTransformer:
+
+enf_firewall.ex - *terraform.NodePlanDestroyableResource
+2019/04/19 11:49:19 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:19 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+enf_firewall.ex - *terraform.NodePlanDestroyableResource
+2019/04/19 11:49:19 [TRACE] DestroyEdgeTransformer: Beginning destroy edge transformation...
+2019/04/19 11:49:19 [TRACE] DestroyEdgeTransformer: enf_firewall.ex destroying "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:19 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:19 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:19 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc0000b6410), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:19 [DEBUG] Attaching resource state to "enf_firewall.ex (destroy)": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc0000b6410), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:19 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:19 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:19 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:19 [DEBUG] resource enf_firewall.ex using provider provider.enf
+2019/04/19 11:49:19 [DEBUG] resource enf_firewall.ex (destroy) using provider provider.enf
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:19 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:19 [DEBUG] ReferenceTransformer: "enf_firewall.ex (destroy)" references: []
+2019/04/19 11:49:19 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:19 [TRACE] DestroyEdgeTransformer: reference graph: enf_firewall.ex
+  provider.enf
+enf_firewall.ex (destroy)
+  provider.enf
+provider.enf
+2019/04/19 11:49:19 [TRACE] DestroyEdgeTransformer: creation node "enf_firewall.ex" references [provider.enf]
+2019/04/19 11:49:19 [TRACE] DestroyEdgeTransformer: creation node "enf_firewall.ex (destroy)" references [provider.enf]
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.DestroyEdgeTransformer:
+
+enf_firewall.ex - *terraform.NodePlanDestroyableResource
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+enf_firewall.ex - *terraform.NodePlanDestroyableResource
+2019/04/19 11:49:19 [TRACE] Graph after step *terraform.RootTransformer:
+
+enf_firewall.ex - *terraform.NodePlanDestroyableResource
+2019/04/19 11:49:19 [DEBUG] Starting graph walk: walkPlanDestroy
+2019/04/19 11:49:19 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] dag/walk: walking "enf_firewall.ex"
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': walking
+2019/04/19 11:49:19 [TRACE] vertex 'root.enf_firewall.ex': evaluating
+2019/04/19 11:49:19 [TRACE] [walkPlanDestroy] Entering eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalReadState
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalDiffDestroy
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalCheckPreventDestroy
+2019/04/19 11:49:19 [TRACE] root: eval: *terraform.EvalWriteDiff
+2019/04/19 11:49:19 [TRACE] [walkPlanDestroy] Exiting eval tree: enf_firewall.ex
+2019/04/19 11:49:19 [DEBUG] command: asking for input: "Do you really want to destroy all resources?"
+2019/04/19 11:49:21 [INFO] terraform: building graph: GraphTypeApply
+2019/04/19 11:49:21 [TRACE] DiffTransformer: starting
+2019/04/19 11:49:21 [TRACE] DiffTransformer: Module: DESTROY: enf_firewall.ex
+2019/04/19 11:49:21 [TRACE] DiffTransformer: Resource "enf_firewall.ex": *terraform.InstanceDiff{mu:sync.Mutex{state:0, sema:0x0}, Attributes:map[string]*terraform.ResourceAttrDiff(nil), Destroy:true, DestroyDeposed:false, DestroyTainted:false, Meta:map[string]interface {}(nil)}
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.DiffTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+2019/04/19 11:49:21 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+2019/04/19 11:49:21 [DEBUG] Attaching resource state to "enf_firewall.ex (destroy)": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000420820), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+2019/04/19 11:49:21 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:21 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:21 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [DEBUG] resource enf_firewall.ex (destroy) using provider provider.enf
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] DestroyEdgeTransformer: Beginning destroy edge transformation...
+2019/04/19 11:49:21 [TRACE] DestroyEdgeTransformer: enf_firewall.ex (destroy) destroying "enf_firewall.ex"
+2019/04/19 11:49:21 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/04/19 11:49:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: enf_firewall.ex
+2019/04/19 11:49:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"ex", Type:"enf_firewall", RawCount:(*config.RawConfig)(0xc0004320e0), RawConfig:(*config.RawConfig)(0xc000432070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/04/19 11:49:21 [DEBUG] Attaching resource state to "enf_firewall.ex": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000420820), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:21 [DEBUG] Attaching resource state to "enf_firewall.ex (destroy)": &terraform.ResourceState{Type:"enf_firewall", Dependencies:[]string{}, Primary:(*terraform.InstanceState)(0xc000420820), Deposed:[]*terraform.InstanceState{}, Provider:"provider.enf", mu:sync.Mutex{state:0, sema:0x0}}
+2019/04/19 11:49:21 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/04/19 11:49:21 [TRACE] Attach provider request: []string{} enf
+2019/04/19 11:49:21 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"enf", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000432000)}
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [DEBUG] resource enf_firewall.ex using provider provider.enf
+2019/04/19 11:49:21 [DEBUG] resource enf_firewall.ex (destroy) using provider provider.enf
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+enf_firewall.ex - *terraform.NodeAbstractResource
+  provider.enf - *terraform.NodeApplyableProvider
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:21 [DEBUG] ReferenceTransformer: "enf_firewall.ex" references: []
+2019/04/19 11:49:21 [DEBUG] ReferenceTransformer: "enf_firewall.ex (destroy)" references: []
+2019/04/19 11:49:21 [TRACE] DestroyEdgeTransformer: reference graph: enf_firewall.ex
+  provider.enf
+enf_firewall.ex (destroy)
+  provider.enf
+provider.enf
+2019/04/19 11:49:21 [TRACE] DestroyEdgeTransformer: creation node "enf_firewall.ex" references [provider.enf]
+2019/04/19 11:49:21 [TRACE] DestroyEdgeTransformer: creation node "enf_firewall.ex (destroy)" references [provider.enf]
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.DestroyEdgeTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.MissingProvisionerTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ProvisionerTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.LocalTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.OutputTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [DEBUG] ReferenceTransformer: "enf_firewall.ex (destroy)" references: []
+2019/04/19 11:49:21 [DEBUG] ReferenceTransformer: "provider.enf" references: []
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.DestroyValueReferenceTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.DestroyOutputTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.PruneUnusedValuesTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+provider.enf (close) - *terraform.graphNodeCloseProvider
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+provider.enf (close) - *terraform.graphNodeCloseProvider
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
+  provider.enf - *terraform.NodeApplyableProvider
+provider.enf - *terraform.NodeApplyableProvider
+provider.enf (close) - *terraform.graphNodeCloseProvider
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
   provider.enf - *terraform.NodeApplyableProvider
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+2019/04/19 11:49:21 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
 
-enf_firewall.ex - *terraform.NodePlannableResource
+enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
   provider.enf - *terraform.NodeApplyableProvider
 meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
-  enf_firewall.ex - *terraform.NodePlannableResource
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
 provider.enf - *terraform.NodeApplyableProvider
 provider.enf (close) - *terraform.graphNodeCloseProvider
-  enf_firewall.ex - *terraform.NodePlannableResource
+  enf_firewall.ex (destroy) - *terraform.NodeDestroyResource
 root - terraform.graphNodeRoot
   meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
   provider.enf (close) - *terraform.graphNodeCloseProvider
-2019/04/15 16:31:03 [DEBUG] Starting graph walk: walkPlan
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "root"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added new vertex: "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "enf_firewall.ex" waiting on "provider.enf"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "root", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
-2019/04/15 16:31:03 [TRACE] dag/walk: walking "provider.enf"
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': walking
-2019/04/15 16:31:03 [TRACE] vertex 'root.provider.enf': evaluating
-2019/04/15 16:31:03 [TRACE] [walkPlan] Entering eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInitProvider
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: terraform.EvalNoop
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalOpFilter
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalGetProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalInterpolateProvider
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalOpFilter
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalSequence
-2019/04/15 16:31:03 [TRACE] root: eval: *terraform.EvalConfigProvider
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: panic: interface conversion: interface {} is nil, not string
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: 
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: goroutine 98 [running]:
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: enf.providerConfigure(0xc000151570, 0x0, 0xc00000e140, 0xc000151570, 0x0)
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/enf/provider.go:98 +0x16f
-2019-04-15T16:31:03.973-0500 [DEBUG] plugin.terraform-provider-enf: github.com/hashicorp/terraform/helper/schema.(*Provider).Configure(0xc000459000, 0xc00015aa80, 0x27bad98, 0xc000093000)
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/github.com/hashicorp/terraform/helper/schema/provider.go:266 +0xd2
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: github.com/hashicorp/terraform/plugin.(*ResourceProviderServer).Configure(0xc000490f40, 0xc00015aa80, 0xc0000c4820, 0x0, 0x0)
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/github.com/hashicorp/terraform/plugin/resource_provider.go:520 +0x42
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: reflect.Value.call(0xc0000c6ba0, 0xc0000c4678, 0x13, 0x1afa699, 0x4, 0xc000073f18, 0x3, 0x3, 0xc000042a80, 0xc0001509c8, ...)
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/reflect/value.go:447 +0x461
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: reflect.Value.Call(0xc0000c6ba0, 0xc0000c4678, 0x13, 0xc00035a718, 0x3, 0x3, 0xc0001509a0, 0xc00035a710, 0xc00035a7b8)
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/reflect/value.go:308 +0xa4
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: net/rpc.(*service).call(0xc0000be5c0, 0xc0001806e0, 0xc000342450, 0xc000342460, 0xc000190900, 0xc000179b80, 0x1a8a8c0, 0xc00015aa80, 0x16, 0x1955dc0, ...)
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/net/rpc/server.go:384 +0x14e
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: created by net/rpc.(*Server).ServeCodec
-2019-04-15T16:31:03.974-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/net/rpc/server.go:481 +0x42b
-2019/04/15 16:31:03 [ERROR] root: eval: *terraform.EvalConfigProvider, err: unexpected EOF
-2019/04/15 16:31:03 [ERROR] root: eval: *terraform.EvalSequence, err: unexpected EOF
-2019/04/15 16:31:03 [ERROR] root: eval: *terraform.EvalOpFilter, err: unexpected EOF
-2019/04/15 16:31:03 [ERROR] root: eval: *terraform.EvalSequence, err: unexpected EOF
-2019/04/15 16:31:03 [TRACE] [walkPlan] Exiting eval tree: provider.enf
-2019/04/15 16:31:03 [TRACE] dag/walk: upstream errored, not walking "enf_firewall.ex"
-2019/04/15 16:31:03 [TRACE] dag/walk: upstream errored, not walking "meta.count-boundary (count boundary fixup)"
-2019/04/15 16:31:03 [TRACE] dag/walk: upstream errored, not walking "provider.enf (close)"
-2019/04/15 16:31:03 [TRACE] dag/walk: upstream errored, not walking "root"
-2019-04-15T16:31:03.978-0500 [DEBUG] plugin: plugin process exited: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf
-2019/04/15 16:31:03 [DEBUG] plugin: waiting for all plugin processes to complete...
-2019-04-15T16:31:03.979-0500 [WARN ] plugin: error closing client during Kill: err="connection is shut down"
+2019/04/19 11:49:21 [DEBUG] Starting graph walk: walkDestroy
+2019/04/19 11:49:21 [TRACE] dag/walk: added new vertex: "provider.enf (close)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added new vertex: "root"
+2019/04/19 11:49:21 [TRACE] dag/walk: added new vertex: "enf_firewall.ex (destroy)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added new vertex: "provider.enf"
+2019/04/19 11:49:21 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added edge: "provider.enf (close)" waiting on "enf_firewall.ex (destroy)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added edge: "root" waiting on "provider.enf (close)"
+2019/04/19 11:49:21 [TRACE] dag/walk: added edge: "enf_firewall.ex (destroy)" waiting on "provider.enf"
+2019/04/19 11:49:21 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "enf_firewall.ex (destroy)"
+2019/04/19 11:49:21 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/04/19 11:49:21 [TRACE] dag/walk: dependencies changed for "enf_firewall.ex (destroy)", sending new deps
+2019/04/19 11:49:21 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/04/19 11:49:21 [TRACE] dag/walk: dependencies changed for "provider.enf (close)", sending new deps
+2019/04/19 11:49:21 [TRACE] dag/walk: walking "provider.enf"
+2019/04/19 11:49:21 [TRACE] vertex 'root.provider.enf': walking
+2019/04/19 11:49:21 [TRACE] vertex 'root.provider.enf': evaluating
+2019/04/19 11:49:21 [TRACE] [walkDestroy] Entering eval tree: provider.enf
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalInitProvider
+2019-04-19T11:49:21.516-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 [DEBUG] Got into Provider()
+2019/04/19 11:49:21 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:21 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalConfigProvider
+2019-04-19T11:49:21.519-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 [DEBUG] Got into providerConfigure()
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Client response StatusCode is: %!(EXTRA int=200)
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Returned data_body is: %!(EXTRA string={"data":[{"username":"xap@admin","token":"r2mOts+63u2MI4CqFWvU3L/j5btMQ/ZI4XlqsiBVq1v0Daq8sCdhv50IGZbz7P1ejuhk+oaGEmrMnZJDXHL927tQb0gjsbfm6euoOcDL3+ipGDr0wY5qhRuDismO6q+kAPzqqPhZ3MUFOZpfO6mImlDRhojms+ku","user_id":66,"type":"DOMAIN_ADMIN","domain_id":1,"domain_network":"fd00:8f80:8000::/48"}],"page":{"curr":-1,"next":-1,"prev":-1}})
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Returned data is: %!(EXTRA enf.Response={[{xap@admin r2mOts+63u2MI4CqFWvU3L/j5btMQ/ZI4XlqsiBVq1v0Daq8sCdhv50IGZbz7P1ejuhk+oaGEmrMnZJDXHL927tQb0gjsbfm6euoOcDL3+ipGDr0wY5qhRuDismO6q+kAPzqqPhZ3MUFOZpfO6mImlDRhojms+ku 66 DOMAIN_ADMIN 1 fd00:8f80:8000::/48}] {-1 -1 -1}})
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Creds: %!(EXTRA []enf.Data=[{xap@admin r2mOts+63u2MI4CqFWvU3L/j5btMQ/ZI4XlqsiBVq1v0Daq8sCdhv50IGZbz7P1ejuhk+oaGEmrMnZJDXHL927tQb0gjsbfm6euoOcDL3+ipGDr0wY5qhRuDismO6q+kAPzqqPhZ3MUFOZpfO6mImlDRhojms+ku 66 DOMAIN_ADMIN 1 fd00:8f80:8000::/48}])
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Token:%!(EXTRA string=r2mOts+63u2MI4CqFWvU3L/j5btMQ/ZI4XlqsiBVq1v0Daq8sCdhv50IGZbz7P1ejuhk+oaGEmrMnZJDXHL927tQb0gjsbfm6euoOcDL3+ipGDr0wY5qhRuDismO6q+kAPzqqPhZ3MUFOZpfO6mImlDRhojms+ku)
+2019-04-19T11:49:21.633-0500 [DEBUG] plugin.terraform-provider-enf: 2019/04/19 11:49:21 Pages is: %!(EXTRA enf.Pages={-1 -1 -1})
+2019/04/19 11:49:21 [TRACE] [walkDestroy] Exiting eval tree: provider.enf
+2019/04/19 11:49:21 [TRACE] dag/walk: walking "enf_firewall.ex (destroy)"
+2019/04/19 11:49:21 [TRACE] vertex 'root.enf_firewall.ex (destroy)': walking
+2019/04/19 11:49:21 [TRACE] vertex 'root.enf_firewall.ex (destroy)': evaluating
+2019/04/19 11:49:21 [TRACE] [walkDestroy] Entering eval tree: enf_firewall.ex (destroy)
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalReadDiff
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalFilterDiff
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:21 [TRACE] root: eval: terraform.EvalNoop
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalInstanceInfo
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalReadState
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalRequireState
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalApplyPre
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalApplyProvisioners
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalIf
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalApply
+2019/04/19 11:49:21 [DEBUG] apply: enf_firewall.ex: executing Apply
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: panic: interface conversion: interface {} is nil, not string
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: goroutine 76 [running]:
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: enf.enfFirewallRuleDelete(0xc0001503f0, 0x1955f20, 0xc0000b02a0, 0x24, 0x24c7ec0)
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/enf/resource_enf_firewall_rule.go:157 +0x528
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: github.com/hashicorp/terraform/helper/schema.(*Resource).Apply(0xc000336000, 0xc0000da410, 0xc000309a80, 0x1955f20, 0xc0000b02a0, 0x1, 0x0, 0x0)
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/github.com/hashicorp/terraform/helper/schema/resource.go:259 +0x4e7
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: github.com/hashicorp/terraform/helper/schema.(*Provider).Apply(0xc000336400, 0xc0000da3c0, 0xc0000da410, 0xc000309a80, 0xc0000b0810, 0x0, 0x0)
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/github.com/hashicorp/terraform/helper/schema/provider.go:285 +0x18f
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: github.com/hashicorp/terraform/plugin.(*ResourceProviderServer).Apply(0xc00016e000, 0xc000308740, 0xc000322520, 0x0, 0x0)
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 	/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/src/github.com/hashicorp/terraform/plugin/resource_provider.go:530 +0x57
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: reflect.Value.call(0xc0000c0780, 0xc0000c2008, 0x13, 0x1afc059, 0x4, 0xc0004f8f18, 0x3, 0x3, 0xc0000b84c0, 0xc000618e70, ...)
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/reflect/value.go:447 +0x461
+2019-04-19T11:49:21.643-0500 [DEBUG] plugin.terraform-provider-enf: reflect.Value.Call(0xc0000c0780, 0xc0000c2008, 0x13, 0xc0004f4f18, 0x3, 0x3, 0x1, 0x0, 0x0)
+2019-04-19T11:49:21.644-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/reflect/value.go:308 +0xa4
+2019-04-19T11:49:21.644-0500 [DEBUG] plugin.terraform-provider-enf: net/rpc.(*service).call(0xc000234040, 0xc00038a0a0, 0xc0000b6010, 0xc0000b6030, 0xc0004d2000, 0xc0004c47e0, 0x19572e0, 0xc000308740, 0x16, 0x1957320, ...)
+2019-04-19T11:49:21.644-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/net/rpc/server.go:384 +0x14e
+2019-04-19T11:49:21.644-0500 [DEBUG] plugin.terraform-provider-enf: created by net/rpc.(*Server).ServeCodec
+2019-04-19T11:49:21.644-0500 [DEBUG] plugin.terraform-provider-enf: 	/usr/local/go/src/net/rpc/server.go:481 +0x42b
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalWriteState
+2019/04/19 11:49:21 [TRACE] root: eval: *terraform.EvalApplyPost
+2019/04/19 11:49:21 [ERROR] root: eval: *terraform.EvalApplyPost, err: 1 error(s) occurred:
+
+* enf_firewall.ex: unexpected EOF
+2019/04/19 11:49:21 [ERROR] root: eval: *terraform.EvalSequence, err: 1 error(s) occurred:
+
+* enf_firewall.ex: unexpected EOF
+2019/04/19 11:49:21 [ERROR] root: eval: *terraform.EvalOpFilter, err: 1 error(s) occurred:
+
+* enf_firewall.ex: unexpected EOF
+2019/04/19 11:49:21 [TRACE] [walkDestroy] Exiting eval tree: enf_firewall.ex (destroy)
+2019/04/19 11:49:21 [TRACE] dag/walk: upstream errored, not walking "provider.enf (close)"
+2019-04-19T11:49:21.647-0500 [DEBUG] plugin: plugin process exited: path=/Users/vinayshanbhag/Desktop/terraform-provider-xaptum/terraform-provider-enf
+2019/04/19 11:49:21 [TRACE] dag/walk: upstream errored, not walking "meta.count-boundary (count boundary fixup)"
+2019/04/19 11:49:21 [TRACE] dag/walk: upstream errored, not walking "root"
+2019/04/19 11:49:21 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:21 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:21 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:21 [TRACE] Preserving existing state lineage "9a7ed257-3b6b-3ac8-70df-43cc07671764"
+2019/04/19 11:49:21 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019-04-19T11:49:21.661-0500 [WARN ] plugin: error closing client during Kill: err="connection is shut down"
