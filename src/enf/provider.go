@@ -9,11 +9,6 @@ import (
 
 
 func Provider() *schema.Provider {
-        //authenticate
-        //jsonData := map[string]string{"username": "xap@admin", "token": "Test1234"}
-        //jsonValue, _ := json.Marshal(jsonData)
-
-        log.Printf("[DEBUG] Got into Provider()")
 
 
         return &schema.Provider{
@@ -44,20 +39,12 @@ func Provider() *schema.Provider {
 
                 ResourcesMap: map[string]*schema.Resource{
                                 "enf_firewall": enfFirewallRule(),
-                                "enf_domain": enfDomain(),
-                                "enf_network": enfNetwork(),
-                                "enf_connection": enfConnection(),
-                	            "enf_group": enfGroup(),
-                		        "enf_endpoint": enfEndpoint(),
-                                "enf_ratelimit": enfRatelimit(),
                 	},
         }
 }
 
 //this returned client can be used in the m interface{} argument for the resource.go files
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-
-    log.Printf("[DEBUG] Got into providerConfigure()")
 
     config := Config{
         Username: d.Get("username").(string),
