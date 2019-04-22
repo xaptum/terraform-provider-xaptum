@@ -1,4 +1,4 @@
-##README
+README
 
 To avoid the following error:
 	"cannot find package "github.com/hashicorp/terraform/helper/schema" in any of: ... ""
