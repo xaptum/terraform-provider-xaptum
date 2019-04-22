@@ -101,12 +101,10 @@ func enfFirewallRule() *schema.Resource {
 
 func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
 
-    if d.Get("id").(string) != "" {
 
         domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
         url := domain_url + "/api/xfw/v1/" + network + "/rule"
-
 
         var newRule firewallRuleCreate
         newRule.IP_family = d.Get("ip_family").(string)
@@ -115,16 +113,12 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
         newRule.Priority = d.Get("priority").(int)
         newRule.Protocol = d.Get("protocol").(string)
 
-        jsonData := "ip_family: " + newRule.IP_family + "direction: " + newRule.Direction + "action: " + newRule.Action + "priority: " + string(newRule.Priority) + "protocol: " + newRule.Protocol  
+        jsonData := map[string]interface{}{"ip_family": newRule.IP_family, "direction": newRule.Direction, "action": newRule.Action, "priority": newRule.Priority, "protocol": newRule.Protocol}  
         jsonValue, _ := json.Marshal(jsonData)
 
 
         var bearer = "Bearer " + m.(*EnfClient).ApiToken
-
-        // Create a new request
         req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
-
-         // add authorization header to the request
         req.Header.Add("Authorization", bearer)
         req.Header.Add("content-type", "application/json")
         req.Header.Add("accept", "application/json")
@@ -132,7 +126,6 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
         log.Printf("[DEBUG] enfFirewallRuleCreate() request is: ", req)
 
 
-        //create client to make the request
         client := m.(*EnfClient).HTTPClient
         response, err := client.Do(req)
         if err != nil {
@@ -140,15 +133,17 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
                 return err        
         } else {
             data, _ := ioutil.ReadAll(response.Body)
-            log.Printf("IN FIREWALL.GO CREATE: ", string(data))
+            log.Printf("[DEBUG] IN FIREWALL.GO CREATE: ", string(data))
 
-            //TODO: assign an ID to the newly created rule
+            var fw_rule firewallRule
+            json.Unmarshal([]byte(data), &fw_rule)
+
+             d.SetId(fw_rule.Id)
+            
 
         }
 
-        d.SetId(network)//TODO: response should have ID
-
-    }
+        //d.SetId(network)//TODO: response should have ID
 
         return nil
 }
@@ -189,18 +184,6 @@ func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
             log.Printf("[DEBUG] enfFirewallRuleRead() string(data): ", string(data))
 
 
-            //var fw_rules firewallRules
-            var fw_rule []firewallRule
-            json.Unmarshal([]byte(data), &fw_rule)
-            //fw_rule = fw_rules
-
-            log.Printf("[DEBUG] enfFirewallRuleRead() fw_rule[0] is: ", fw_rule[0])
-            log.Printf("[DEBUG] enfFirewallRuleRead() fw_rule.Id is: ", fw_rule[0].Id)
-
-            log.Printf("[DEBUG] enfFirewallRuleRead() len(fw_rule) is: ", len(fw_rule))
-            for i := 0; i < len(fw_rule); i++ {
-              d.SetId(fw_rule[i].Id)
-            }
 
         }
         //d.SetId(network)//TODO: response should have ID
@@ -208,7 +191,7 @@ func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
 }
 
 func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
-        //TODO: do delete and add API calls here
+
         enfFirewallRuleDelete(d, m)
         return enfFirewallRuleCreate(d, m)
 
@@ -218,7 +201,7 @@ func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
 }
 
 func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
-        
+
         domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
         id := d.Get("rule_id").(string)
@@ -244,7 +227,7 @@ func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
                 fmt.Printf("The HTTP request failed with error %s\n", err)
         } else {
             data, _ := ioutil.ReadAll(response.Body)
-            fmt.Println(string(data))
+            log.Printf(string(data))
         }
 
         //d.SetId(network)//TODO: response should have ID

@@ -1,9 +1,7 @@
 package enf
 
-//fixed missing package with: go get github.com/hashicorp/terraform
 import (
         "github.com/hashicorp/terraform/helper/schema"
-        "log"
 )
 
 
