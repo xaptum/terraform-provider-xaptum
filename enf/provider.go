@@ -9,9 +9,6 @@ import (
 
 func Provider() *schema.Provider {
 
-        log.Printf("[DEBUG] Got into Provider()")
-
-
         return &schema.Provider{
 
             Schema: map[string]*schema.Schema{
