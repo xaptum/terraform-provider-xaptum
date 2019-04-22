@@ -11,9 +11,6 @@ import (
 
 )
 
-// type firewallRules struct {
-//     firewallRule firewallRule
-// }
 
 type firewallRule struct {
     Id   string `json:"id"`
@@ -30,6 +27,18 @@ type firewallRule struct {
     Network string `json:"network"`
 }
 
+type firewallRuleCreate struct {
+    IP_family string `json:"ip_family"`
+    Direction string `json:"direction"`
+    Action string `json:"action"`
+    Priority int `json:"priority"`
+    Protocol string `json:"protocol"`
+    SourceIP string `json:"source_ip"`
+    SourcePort int `json:"source_port"`
+    DestIP string `json:"dest_ip"`
+    DestPort int `json:"dest_port"`
+}
+
 
 
 func enfFirewallRule() *schema.Resource {
@@ -44,19 +53,69 @@ func enfFirewallRule() *schema.Resource {
                                 Type:     schema.TypeString,
                                 Required: true,
                         },
+                        "priority": &schema.Schema{
+                                Type:     schema.TypeInt,
+                                Required: true,
+                        },
+                        "protocol": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Required: true,
+                        },
+                        "direction": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Required: true,
+                        },
+                        "source_ip": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Optional: true,
+                                Default: "*",
+                        },
+                        "source_port": &schema.Schema{
+                                Type:     schema.TypeInt,
+                                Optional: true,
+                                Default: 0,
+                        },
+                        "dest_ip": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Optional: true,
+                                Default: "*",
+                        },
+                        "dest_port": &schema.Schema{
+                                Type:     schema.TypeInt,
+                                Optional: true,
+                                Default: 0,
+                        },
+                        "action": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Required: true,
+                        },
+                        "ip_family": &schema.Schema{
+                                Type:     schema.TypeString,
+                                Required: true,
+                        },
+
                 },
         }
 }
 
+
 func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
 
+    if d.Get("id").(string) != "" {
 
         domain_url := m.(*EnfClient).DomainURL
         network := d.Get("network").(string)
         url := domain_url + "/api/xfw/v1/" + network + "/rule"
 
 
-        jsonData := map[string]string{"rule": "400"}
+        var newRule firewallRuleCreate
+        newRule.IP_family = d.Get("ip_family").(string)
+        newRule.Direction = d.Get("direction").(string)
+        newRule.Action = d.Get("action").(string)
+        newRule.Priority = d.Get("priority").(int)
+        newRule.Protocol = d.Get("protocol").(string)
+
+        jsonData := "ip_family: " + newRule.IP_family + "direction: " + newRule.Direction + "action: " + newRule.Action + "priority: " + string(newRule.Priority) + "protocol: " + newRule.Protocol  
         jsonValue, _ := json.Marshal(jsonData)
 
 
@@ -82,10 +141,14 @@ func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
         } else {
             data, _ := ioutil.ReadAll(response.Body)
             log.Printf("IN FIREWALL.GO CREATE: ", string(data))
+
+            //TODO: assign an ID to the newly created rule
+
         }
 
         d.SetId(network)//TODO: response should have ID
 
+    }
 
         return nil
 }
@@ -134,19 +197,23 @@ func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
             log.Printf("[DEBUG] enfFirewallRuleRead() fw_rule[0] is: ", fw_rule[0])
             log.Printf("[DEBUG] enfFirewallRuleRead() fw_rule.Id is: ", fw_rule[0].Id)
 
-
-
+            log.Printf("[DEBUG] enfFirewallRuleRead() len(fw_rule) is: ", len(fw_rule))
+            for i := 0; i < len(fw_rule); i++ {
+              d.SetId(fw_rule[i].Id)
+            }
 
         }
-
-        d.SetId(network)//TODO: response should have ID
+        //d.SetId(network)//TODO: response should have ID
         return nil
 }
 
 func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
         //TODO: do delete and add API calls here
+        enfFirewallRuleDelete(d, m)
+        return enfFirewallRuleCreate(d, m)
 
-        return nil
+        //return nil
+
         //return enfFirewallRuleRead(d, m)
 }
 
@@ -180,7 +247,7 @@ func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
             fmt.Println(string(data))
         }
 
-        d.SetId(network)//TODO: response should have ID
+        //d.SetId(network)//TODO: response should have ID
 
         return nil
 }

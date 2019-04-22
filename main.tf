@@ -6,13 +6,11 @@ provider "enf" {
 
 resource "enf_firewall" "ex" {
   #network = "2607:8f80:8080:8::/64"
-  network = "fd00:8f80:8000::/64"
+  network     = "fd00:8f80:8000::/64"
+  ip_family   = "IP6"
+  priority    = 1
+  protocol    = "TCP"
+  direction   = "EGRESS"
+  source_port = "22"
+  action      = "ACCEPT"
 }
-
-# resource "enf_connection" "ex" {}
-# resource "enf_domain" "ex" {}
-# resource "enf_endpoint" "ex" {}
-# resource "enf_group" "ex" {}
-# resource "enf_network" "ex" {}
-# resource "enf_ratelimit" "ex" {}
-
