@@ -1,7 +1,7 @@
 package enf
 
 import (
-	"log"
+    "log"
     "net/http"
     "encoding/json"
     "bytes"
@@ -30,9 +30,9 @@ type Pages struct {
 }
 
 type Config struct {
-	Username string
-	Password string
-	DomainURL string 
+    Username string
+    Password string
+    DomainURL string 
 }
 
 type EnfClient struct {
@@ -65,14 +65,7 @@ func (c *Config) Client() (interface{}, error) {
 
                 var resp Response
                 json.Unmarshal([]byte(data_body), &resp)
-
-                log.Printf("Client response StatusCode is: ", response.StatusCode)
-                log.Printf("Returned data_body is: ", string(data_body))
-                log.Printf("Returned data is: ", (resp))
-                log.Printf("Creds: ", resp.Data)
-                log.Printf("Token:", resp.Data[0].Token)
-                log.Printf("Pages is: ", resp.Page)
-
+                
                 client := &EnfClient{
                 	ApiToken: resp.Data[0].Token,
                 	DomainURL: domain_url,

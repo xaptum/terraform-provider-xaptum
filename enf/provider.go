@@ -1,6 +1,5 @@
 package enf
 
-//fixed missing package with: go get github.com/hashicorp/terraform
 import (
         "github.com/hashicorp/terraform/helper/schema"
         "log"
@@ -20,39 +19,30 @@ func Provider() *schema.Provider {
                     Type:        schema.TypeString,
                     Optional:    true,
                     DefaultFunc: schema.EnvDefaultFunc("ENF_USERNAME", nil),
-                    Description: "Token from authenticating with dev.xaptum.io",
+                    Description: "Username for authenticating with dev.xaptum.io",
                 },
                 "password": {
                     Type:        schema.TypeString,
                     Optional:    true,
                     DefaultFunc: schema.EnvDefaultFunc("ENF_PASSWORD", nil),
-                    Description: "Base URL for authentication",
+                    Description: "Password for authenticating with dev.xaptum.io",
                 },
                 "domain_url": {
                     Type:        schema.TypeString,
                     Optional:    true,
                     DefaultFunc: schema.EnvDefaultFunc("ENF_DOMAIN_URL", nil),
-                    Description: "Base URL for authentication",
+                    Description: "Base URL for API calls",
                 },
             },
 
                 ConfigureFunc: providerConfigure,
 
                 ResourcesMap: map[string]*schema.Resource{
-                                "enf_firewall": enfFirewallRule(),
-                                "enf_domain": enfDomain(),
-                                "enf_network": enfNetwork(),
-                                "enf_connection": enfConnection(),
-                	            "enf_group": enfGroup(),
-                		        "enf_endpoint": enfEndpoint(),
-                                "enf_ratelimit": enfRatelimit(),
                 	},
         }
 }
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-
-    log.Printf("[DEBUG] Got into providerConfigure()")
 
     config := Config{
         Username: d.Get("username").(string),
