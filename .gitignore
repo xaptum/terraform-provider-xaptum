@@ -1,10 +1,31 @@
+*.dll
+*.exe
 .DS_Store
-.terraform
-src/github.com
-bin
-terraform-provider-enf
-pkg/darwin_amd64/enf.a
-crash.log
+example.tf
+terraform.tfplan
 terraform.tfstate
-terraform.tfstate.backup
-pkg
+bin/
+modules-dev/
+/pkg/
+.vagrant/
+*.backup
+./*.tfstate
+.terraform/
+*.log
+*.bak
+*~
+.*.swp
+.idea
+.vscode
+*.iml
+*.test
+log.txt
+
+# Test exclusions
+!command/test-fixtures/**/*.tfstate
+!command/test-fixtures/**/.terraform/
+
+# Keep windows files with windows line endings
+*.winfile eol=crlf
+/.vs
+node_modules
