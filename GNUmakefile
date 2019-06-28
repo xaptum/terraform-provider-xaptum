@@ -1,10 +1,14 @@
+TEST?=./...
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
 PKG_NAME=enf
 
 default: build
 
-build:
+build: fmtcheck
 	go install
+
+test: fmtcheck
+	go test $(TEST) -timeout=30s -parallel=4
 
 fmt:
 	@echo "==> Fixing source code with gofmt..."
@@ -43,4 +47,12 @@ tools:
 	GO111MODULE=on go install github.com/client9/misspell/cmd/misspell
 	GO111MODULE=on go install github.com/golangci/golangci-lint/cmd/golangci-lint
 
-.PHONY: build fmt fmtcheck lint tools
+test-compile:
+	@if [ "$(TEST)" = "./..." ]; then \
+		echo "ERROR: Set TEST to a specific package. For example,"; \
+		echo "  make test-compile TEST=./$(PKG_NAME)"; \
+		exit 1; \
+	fi
+	go test -c $(TEST) $(TESTARGS)
+
+.PHONY: build test fmt fmtcheck lint tools test-compile
