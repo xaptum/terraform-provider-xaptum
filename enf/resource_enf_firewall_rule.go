@@ -160,7 +160,7 @@ func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
                 log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
                 return err
         } else {
-            data, _ := ioutil.ReadAll(response.Body)
+            _, _ = ioutil.ReadAll(response.Body)
         }
 
         return nil
@@ -192,7 +192,7 @@ func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
         if err != nil {
                 fmt.Printf("The HTTP request failed with error %s\n", err)
         } else {
-            data, _ := ioutil.ReadAll(response.Body)
+            _, _ = ioutil.ReadAll(response.Body)
         }
 
 

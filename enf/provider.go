@@ -2,15 +2,14 @@ package enf
 
 import (
         "github.com/hashicorp/terraform/helper/schema"
-        "log"
+        "github.com/hashicorp/terraform/terraform"
 )
 
+// Provider returns a terraform.ResourceProvider
+func Provider() terraform.ResourceProvider {
 
-
-func Provider() *schema.Provider {
-
+        // The actual provider
         return &schema.Provider{
-
             Schema: map[string]*schema.Schema{
                 "username": {
                     Type:        schema.TypeString,
@@ -18,12 +17,14 @@ func Provider() *schema.Provider {
                     DefaultFunc: schema.EnvDefaultFunc("ENF_USERNAME", nil),
                     Description: "Username for authenticating with dev.xaptum.io",
                 },
+
                 "password": {
                     Type:        schema.TypeString,
                     Optional:    true,
                     DefaultFunc: schema.EnvDefaultFunc("ENF_PASSWORD", nil),
                     Description: "Password for authenticating with dev.xaptum.io",
                 },
+
                 "domain_url": {
                     Type:        schema.TypeString,
                     Optional:    true,
@@ -32,20 +33,19 @@ func Provider() *schema.Provider {
                 },
             },
 
-                ConfigureFunc: providerConfigure,
+            ResourcesMap: map[string]*schema.Resource{
+            },
 
-                ResourcesMap: map[string]*schema.Resource{
-                    },
+            ConfigureFunc: providerConfigure,
         }
 }
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-
     config := Config{
         Username: d.Get("username").(string),
         Password: d.Get("password").(string),
         DomainURL: d.Get("domain_url").(string),
-
     }
+
     return config.Client()
 }
