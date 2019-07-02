@@ -1,10 +1,12 @@
-provider "enf" {
-  username = "xap@admin"
+provider "xaptum" {
+  domain_url = "https://demo.xaptum.io"
+
+  username = "xap@demo"
   password = "Test1234"
 }
 
-resource "enf_firewall" "ex" {
-  network   = "fd00:8f80:8000::/64"
+resource "xaptum_enf_firewall" "ex" {
+  network   = "fd00:8f80:8080:8::/64"
   ip_family = "IP6"
 
   priority    = 1
