@@ -41,12 +41,10 @@ type EnfClient struct {
 }
 
 func (c *Config) Client() (interface{}, error) {
-
 	jsonData := map[string]string{"username": c.Username, "token": c.Password}
 	jsonValue, _ := json.Marshal(jsonData)
 
-	domain_url := "https://dev.xaptum.io"
-	url := domain_url + "/api/xcr/v2/xauth"
+	url := c.DomainURL + "/api/xcr/v2/xauth"
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
 
 	req.Header.Add("content-type", "application/json")
@@ -55,17 +53,22 @@ func (c *Config) Client() (interface{}, error) {
 	response, err := http_client.Do(req)
 
 	if err != nil {
-		log.Printf("The HTTP request failed with error %s\n", err)
+		log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
 		return nil, err
 	} else {
-		data_body, _ := ioutil.ReadAll(response.Body)
+		log.Printf("[DEBUG] resp %s", response)
+
+		data_body, sec := ioutil.ReadAll(response.Body)
 
 		var resp Response
 		json.Unmarshal([]byte(data_body), &resp)
 
+		log.Printf("[INFO] Got data body %s, sec%s", data_body, sec)
+		log.Printf("[INFO] Got token %s", resp.Data[0].Token)
+
 		client := &EnfClient{
 			ApiToken:   resp.Data[0].Token,
-			DomainURL:  domain_url,
+			DomainURL:  c.DomainURL,
 			HTTPClient: &http_client,
 		}
 
