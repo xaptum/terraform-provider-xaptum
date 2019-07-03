@@ -1,10 +1,7 @@
 package enf
 
 import (
-	"bytes"
-	"encoding/json"
-	"io/ioutil"
-	"log"
+	"context"
 	"net/http"
 )
 
@@ -38,41 +35,29 @@ type EnfClient struct {
 	ApiToken   string
 	DomainURL  string
 	HTTPClient *http.Client
+
+	Client *Client
 }
 
 func (c *Config) Client() (interface{}, error) {
-	jsonData := map[string]string{"username": c.Username, "token": c.Password}
-	jsonValue, _ := json.Marshal(jsonData)
-
-	url := c.DomainURL + "/api/xcr/v2/xauth"
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
-
-	req.Header.Add("content-type", "application/json")
-	req.Header.Add("accept", "application/json")
-	http_client := http.Client{}
-	response, err := http_client.Do(req)
-
+	client, err := NewClient(c.DomainURL, nil)
 	if err != nil {
-		log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
 		return nil, err
-	} else {
-		log.Printf("[DEBUG] resp %s", response)
-
-		data_body, sec := ioutil.ReadAll(response.Body)
-
-		var resp Response
-		json.Unmarshal([]byte(data_body), &resp)
-
-		log.Printf("[INFO] Got data body %s, sec%s", data_body, sec)
-		log.Printf("[INFO] Got token %s", resp.Data[0].Token)
-
-		client := &EnfClient{
-			ApiToken:   resp.Data[0].Token,
-			DomainURL:  c.DomainURL,
-			HTTPClient: &http_client,
-		}
-
-		return client, nil
 	}
 
+	authReq := &AuthRequest{Username: &c.Username, Password: &c.Password}
+	auth, _, err := client.Auth.Authenticate(context.Background(), authReq)
+	if err != nil {
+		return nil, err
+	}
+
+	enfClient := &EnfClient{
+		ApiToken:   *auth.Token,
+		DomainURL:  c.DomainURL,
+		HTTPClient: &http.Client{},
+
+		Client: client,
+	}
+
+	return enfClient, nil
 }
