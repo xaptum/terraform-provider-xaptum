@@ -120,8 +120,8 @@ func resourceEnfFirewallRuleRead(d *schema.ResourceData, meta interface{}) error
 	d.Set("protocol", rule.Protocol)
 	d.Set("source_ip", rule.SourceIP)
 	d.Set("source_port", rule.SourcePort)
-	d.Set("source_ip", rule.DestIP)
-	d.Set("source_port", rule.DestPort)
+	d.Set("dest_ip", rule.DestIP)
+	d.Set("dest_port", rule.DestPort)
 
 	return nil
 }
