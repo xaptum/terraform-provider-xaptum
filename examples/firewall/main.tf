@@ -6,7 +6,7 @@ provider "xaptum" {
 }
 
 resource "xaptum_enf_firewall" "ex" {
-  network   = "fd00:8f80:8080:8::/64"
+  network   = "2607:8f80:8080:8::/64"
   ip_family = "IP6"
 
   priority    = 1

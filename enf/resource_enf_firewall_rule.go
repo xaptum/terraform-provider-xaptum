@@ -1,188 +1,138 @@
 package enf
 
 import (
-	"bytes"
-	"encoding/json"
+	"context"
 	"fmt"
 	"github.com/hashicorp/terraform/helper/schema"
-	"io/ioutil"
-	"log"
-	"net/http"
 )
 
-type firewallRule struct {
-	Id         string `json:"id"`
-	Priority   int    `json:"priority"`
-	Protocol   string `json:"protocol"`
-	Direction  string `json:"direction"`
-	SourceIP   string `json:"source_ip"`
-	SourcePort int    `json:"source_port"`
-	DestIP     string `json:"dest_ip"`
-	DestPort   int    `json:"dest_port"`
-	Ack        string `json:"ack"`
-	Action     string `json:"action"`
-	IPFamily   string `json:"ip_family"`
-	Network    string `json:"network"`
-}
-
-type firewallRuleCreate struct {
-	IP_family  string `json:"ip_family"`
-	Direction  string `json:"direction"`
-	Action     string `json:"action"`
-	Priority   int    `json:"priority"`
-	Protocol   string `json:"protocol"`
-	SourceIP   string `json:"source_ip"`
-	SourcePort int    `json:"source_port"`
-	DestIP     string `json:"dest_ip"`
-	DestPort   int    `json:"dest_port"`
-}
-
-func enfFirewallRule() *schema.Resource {
+func resourceEnfFirewallRule() *schema.Resource {
 	return &schema.Resource{
-		Create: enfFirewallRuleCreate,
-		Read:   enfFirewallRuleRead,
-		Update: enfFirewallRuleUpdate,
-		Delete: enfFirewallRuleDelete,
+		Create: resourceEnfFirewallRuleCreate,
+		Read:   resourceEnfFirewallRuleRead,
+		Delete: resourceEnfFirewallRuleDelete,
 
 		Schema: map[string]*schema.Schema{
 			"network": {
 				Type:     schema.TypeString,
 				Required: true,
+				ForceNew: true,
 			},
 			"priority": {
 				Type:     schema.TypeInt,
 				Required: true,
-			},
-			"protocol": {
-				Type:     schema.TypeString,
-				Required: true,
-			},
-			"direction": {
-				Type:     schema.TypeString,
-				Required: true,
-			},
-			"source_ip": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Default:  "*",
-			},
-			"source_port": {
-				Type:     schema.TypeInt,
-				Optional: true,
-				Default:  0,
-			},
-			"dest_ip": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Default:  "*",
-			},
-			"dest_port": {
-				Type:     schema.TypeInt,
-				Optional: true,
-				Default:  0,
+				ForceNew: true,
 			},
 			"action": {
 				Type:     schema.TypeString,
 				Required: true,
+				ForceNew: true,
+			},
+			"direction": {
+				Type:     schema.TypeString,
+				Required: true,
+				ForceNew: true,
 			},
 			"ip_family": {
 				Type:     schema.TypeString,
 				Required: true,
+				ForceNew: true,
+			},
+			"protocol": {
+				Type:     schema.TypeString,
+				Required: true,
+				ForceNew: true,
+			},
+			"source_ip": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"source_port": {
+				Type:     schema.TypeInt,
+				Optional: true,
+				ForceNew: true,
+			},
+			"dest_ip": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"dest_port": {
+				Type:     schema.TypeInt,
+				Optional: true,
+				ForceNew: true,
 			},
 		},
 	}
 }
 
-func enfFirewallRuleCreate(d *schema.ResourceData, m interface{}) error {
+func createInt(x int) *int {
+	return &x
+}
 
-	domain_url := m.(*EnfClient).DomainURL
+func createString(x string) *string {
+	return &x
+}
+
+func resourceEnfFirewallRuleCreate(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
-	url := domain_url + "/api/xfw/v1/" + network + "/rule"
 
-	var newRule firewallRuleCreate
-	newRule.IP_family = d.Get("ip_family").(string)
-	newRule.Direction = d.Get("direction").(string)
-	newRule.Action = d.Get("action").(string)
-	newRule.Priority = d.Get("priority").(int)
-	newRule.Protocol = d.Get("protocol").(string)
-
-	jsonData := map[string]interface{}{"ip_family": newRule.IP_family, "direction": newRule.Direction, "action": newRule.Action, "priority": newRule.Priority, "protocol": newRule.Protocol}
-	jsonValue, _ := json.Marshal(jsonData)
-
-	var bearer = "Bearer " + m.(*EnfClient).ApiToken
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
-	req.Header.Add("Authorization", bearer)
-	req.Header.Add("content-type", "application/json")
-	req.Header.Add("accept", "application/json")
-
-	client := m.(*EnfClient).HTTPClient
-	response, err := client.Do(req)
-	if err != nil {
-		log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
-		return err
-	} else {
-		data, _ := ioutil.ReadAll(response.Body)
-		log.Printf("[DEBUG] Response body in enfFirewallRuleCreate: ", string(data))
-
-		var fw_rule firewallRule
-		json.Unmarshal([]byte(data), &fw_rule)
-		d.SetId(fw_rule.Id)
+	params := &FirewallRuleRequest{
+		Priority:   createInt(d.Get("priority").(int)),
+		Action:     createString(d.Get("action").(string)),
+		Direction:  createString(d.Get("direction").(string)),
+		IPFamily:   createString(d.Get("ip_family").(string)),
+		Protocol:   createString(d.Get("protocol").(string)),
+		SourceIP:   createString(d.Get("source_ip").(string)),
+		SourcePort: createInt(d.Get("source_port").(int)),
+		DestIP:     createString(d.Get("dest_ip").(string)),
+		DestPort:   createInt(d.Get("dest_port").(int)),
 	}
+
+	client := meta.(*EnfClient).Client
+	rule, _, err := client.Firewall.CreateRule(context.Background(), network, params)
+	if err != nil {
+		return err
+	}
+
+	d.SetId(*rule.ID)
 
 	return nil
 }
 
-func enfFirewallRuleRead(d *schema.ResourceData, m interface{}) error {
-
-	domain_url := m.(*EnfClient).DomainURL
-	log.Printf("[DEBUG] domain_url from m interface is: ", domain_url)
+func resourceEnfFirewallRuleRead(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
-	url := domain_url + "/api/xfw/v1/" + network + "/rule"
+	id := d.Id()
 
-	var bearer = "Bearer " + m.(*EnfClient).ApiToken
-	req, err := http.NewRequest("GET", url, nil)
-	req.Header.Add("Authorization", bearer)
-	req.Header.Add("content-type", "application/json")
-	req.Header.Add("accept", "application/json")
-
-	client := m.(*EnfClient).HTTPClient
-	response, err := client.Do(req)
-	log.Printf("[DEBUG] enfFirewallRuleRead() error is: ", err)
+	client := meta.(*EnfClient).Client
+	rule, _, err := client.Firewall.GetRule(context.Background(), network, id)
 	if err != nil {
-		log.Printf("[ERROR] The HTTP request failed with error %s\n", err)
+		// TODO: If just not found, run `d.SetId(""); return nil`
 		return err
-	} else {
-		_, _ = ioutil.ReadAll(response.Body)
 	}
+
+	d.Set("network", rule.Network)
+	d.Set("priority", rule.Priority)
+	d.Set("action", rule.Action)
+	d.Set("direction", rule.Direction)
+	d.Set("ip_family", rule.IPFamily)
+	d.Set("protocol", rule.Protocol)
+	d.Set("source_ip", rule.SourceIP)
+	d.Set("source_port", rule.SourcePort)
+	d.Set("source_ip", rule.DestIP)
+	d.Set("source_port", rule.DestPort)
 
 	return nil
 }
-
-func enfFirewallRuleUpdate(d *schema.ResourceData, m interface{}) error {
-
-	enfFirewallRuleDelete(d, m)
-	return enfFirewallRuleCreate(d, m)
-}
-
-func enfFirewallRuleDelete(d *schema.ResourceData, m interface{}) error {
-
-	domain_url := m.(*EnfClient).DomainURL
+func resourceEnfFirewallRuleDelete(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
-	id := d.Get("rule_id").(string)
-	url := domain_url + "/api/xfw/v1/" + network + "/rule/" + id
+	id := d.Id()
 
-	var bearer = "Bearer " + m.(*EnfClient).ApiToken
-	req, err := http.NewRequest("DELETE", url, nil)
-	req.Header.Add("Authorization", bearer)
-	req.Header.Add("content-type", "application/json")
-	req.Header.Add("accept", "application/json")
-
-	client := m.(*EnfClient).HTTPClient
-	response, err := client.Do(req)
+	client := meta.(*EnfClient).Client
+	_, err := client.Firewall.DeleteRule(context.Background(), network, id)
 	if err != nil {
-		fmt.Printf("The HTTP request failed with error %s\n", err)
-	} else {
-		_, _ = ioutil.ReadAll(response.Body)
+		return fmt.Errorf("Error deleting Firewall Rule %s: %s", d.Id(), err)
 	}
 
 	return nil
