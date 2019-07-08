@@ -39,6 +39,9 @@ type Client struct {
 	// User agent used when communicating with the ENF API.
 	UserAgent string
 
+	// The API token for authenticating with the API
+	ApiToken string
+
 	// Reuse a single struct instead of allocating one for each service on the heap
 	common service
 
@@ -96,6 +99,10 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	req, err := http.NewRequest(method, u.String(), buf)
 	if err != nil {
 		return nil, err
+	}
+
+	if c.ApiToken != "" {
+		req.Header.Set(headerToken, fmt.Sprintf(headerTokenFormat, c.ApiToken))
 	}
 
 	if body != nil {

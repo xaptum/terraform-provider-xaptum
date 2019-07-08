@@ -59,5 +59,7 @@ func (c *Config) Client() (interface{}, error) {
 		Client: client,
 	}
 
+	client.ApiToken = *auth.Token
+
 	return enfClient, nil
 }
