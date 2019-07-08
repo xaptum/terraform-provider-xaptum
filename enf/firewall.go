@@ -61,19 +61,18 @@ func (s *FirewallService) ListRules(ctx context.Context, network string) ([]*Fir
 }
 
 func (s *FirewallService) GetRule(ctx context.Context, network string, id string) (*FirewallRule, *http.Response, error) {
-	path := fmt.Sprintf("api/xfw/v1/%v/rule/%v", network, id)
-	req, err := s.client.NewRequest("GET", path, nil)
-	if err != nil {
-		return nil, nil, err
-	}
-
-	rule := new(FirewallRule)
-	resp, err := s.client.Do(ctx, req, rule)
+	rules, resp, err := s.ListRules(ctx, network)
 	if err != nil {
 		return nil, resp, err
 	}
 
-	return rule, resp, nil
+	for _, r := range rules {
+		if *r.ID == id {
+			return r, resp, nil
+		}
+	}
+
+	return nil, nil, fmt.Errorf("Rule not found")
 }
 
 func (s *FirewallService) CreateRule(ctx context.Context, network string, rule *FirewallRuleRequest) (*FirewallRule, *http.Response, error) {
