@@ -43,7 +43,8 @@ type Client struct {
 	common service
 
 	// Services used for talking to different parts of the ENF API.
-	Auth *AuthService
+	Auth     *AuthService
+	Firewall *FirewallService
 }
 
 type service struct {
@@ -71,6 +72,7 @@ func NewClient(domain string, httpClient *http.Client) (*Client, error) {
 	c := &Client{client: httpClient, Domain: domain, BaseURL: baseURL, UserAgent: defaultUserAgent}
 	c.common.client = c
 	c.Auth = (*AuthService)(&c.common)
+	c.Firewall = (*FirewallService)(&c.common)
 	return c, nil
 }
 
