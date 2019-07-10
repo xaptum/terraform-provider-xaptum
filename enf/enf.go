@@ -184,3 +184,19 @@ func CheckResponse(r *http.Response) error {
 
 	return errorResponse
 }
+
+// Bool is a helper function that creates a new value and returns a
+// pointer to it.
+func Bool(v bool) *bool { return &v }
+
+// Int is a helper function that creates a new value and returns a
+// pointer to it.
+func Int(v int) *int { return &v }
+
+// Int64 is a helper function that creates a new value and returns a
+// pointer to it.
+func Int64(v int) *int { return &v }
+
+// String is a helper function that creates a new value and returns a
+// pointer to it.
+func String(v string) *string { return &v }
