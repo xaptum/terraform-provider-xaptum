@@ -72,7 +72,8 @@ func (s *FirewallService) GetRule(ctx context.Context, network string, id string
 		}
 	}
 
-	return nil, nil, fmt.Errorf("Rule not found")
+	resp.StatusCode = 404
+	return nil, resp, fmt.Errorf("Rule not found")
 }
 
 func (s *FirewallService) CreateRule(ctx context.Context, network string, rule *FirewallRuleRequest) (*FirewallRule, *http.Response, error) {
