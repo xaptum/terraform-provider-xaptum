@@ -2,7 +2,8 @@ package enf
 
 import (
 	"context"
-	"fmt"
+	"net/http"
+
 	"github.com/hashicorp/terraform/helper/schema"
 )
 
@@ -44,9 +45,10 @@ func resourceEnfFirewallRule() *schema.Resource {
 				ForceNew: true,
 			},
 			"source_ip": {
-				Type:     schema.TypeString,
-				Optional: true,
-				ForceNew: true,
+				Type:             schema.TypeString,
+				Optional:         true,
+				ForceNew:         true,
+				DiffSuppressFunc: suppressDefaultCIDR,
 			},
 			"source_port": {
 				Type:     schema.TypeInt,
@@ -55,9 +57,10 @@ func resourceEnfFirewallRule() *schema.Resource {
 				Default:  0,
 			},
 			"dest_ip": {
-				Type:     schema.TypeString,
-				Optional: true,
-				ForceNew: true,
+				Type:             schema.TypeString,
+				Optional:         true,
+				ForceNew:         true,
+				DiffSuppressFunc: suppressDefaultCIDR,
 			},
 			"dest_port": {
 				Type:     schema.TypeInt,
@@ -92,7 +95,7 @@ func resourceEnfFirewallRuleCreate(d *schema.ResourceData, meta interface{}) err
 
 	d.SetId(*rule.ID)
 
-	return nil
+	return resourceEnfFirewallRuleRead(d, meta)
 }
 
 func resourceEnfFirewallRuleRead(d *schema.ResourceData, meta interface{}) error {
@@ -100,9 +103,12 @@ func resourceEnfFirewallRuleRead(d *schema.ResourceData, meta interface{}) error
 	id := d.Id()
 
 	client := meta.(*EnfClient).Client
-	rule, _, err := client.Firewall.GetRule(context.Background(), network, id)
+	rule, resp, err := client.Firewall.GetRule(context.Background(), network, id)
 	if err != nil {
-		// TODO: If just not found, run `d.SetId(""); return nil`
+		if resp.StatusCode == http.StatusNotFound {
+			d.SetId("")
+			return nil
+		}
 		return err
 	}
 
@@ -119,15 +125,26 @@ func resourceEnfFirewallRuleRead(d *schema.ResourceData, meta interface{}) error
 
 	return nil
 }
+
 func resourceEnfFirewallRuleDelete(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
 	id := d.Id()
 
 	client := meta.(*EnfClient).Client
 	_, err := client.Firewall.DeleteRule(context.Background(), network, id)
-	if err != nil {
-		return fmt.Errorf("Error deleting Firewall Rule %s: %s", d.Id(), err)
+
+	return err
+}
+
+func suppressDefaultCIDR(k, old, new string, d *schema.ResourceData) bool {
+	network := d.Get("network").(string)
+	direction := d.Get("direction").(string)
+
+	if ((k == "source_ip" && direction == "EGRESS") ||
+		(k == "dest_ip" && direction == "INGRESS")) &&
+		(old == network && new == "") {
+		return true
 	}
 
-	return nil
+	return false
 }
