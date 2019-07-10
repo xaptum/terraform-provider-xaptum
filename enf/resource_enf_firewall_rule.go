@@ -52,6 +52,7 @@ func resourceEnfFirewallRule() *schema.Resource {
 				Type:     schema.TypeInt,
 				Optional: true,
 				ForceNew: true,
+				Default:  0,
 			},
 			"dest_ip": {
 				Type:     schema.TypeString,
@@ -62,32 +63,25 @@ func resourceEnfFirewallRule() *schema.Resource {
 				Type:     schema.TypeInt,
 				Optional: true,
 				ForceNew: true,
+				Default:  0,
 			},
 		},
 	}
-}
-
-func createInt(x int) *int {
-	return &x
-}
-
-func createString(x string) *string {
-	return &x
 }
 
 func resourceEnfFirewallRuleCreate(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
 
 	params := &FirewallRuleRequest{
-		Priority:   createInt(d.Get("priority").(int)),
-		Action:     createString(d.Get("action").(string)),
-		Direction:  createString(d.Get("direction").(string)),
-		IPFamily:   createString(d.Get("ip_family").(string)),
-		Protocol:   createString(d.Get("protocol").(string)),
-		SourceIP:   createString(d.Get("source_ip").(string)),
-		SourcePort: createInt(d.Get("source_port").(int)),
-		DestIP:     createString(d.Get("dest_ip").(string)),
-		DestPort:   createInt(d.Get("dest_port").(int)),
+		Priority:   Int(d.Get("priority").(int)),
+		Action:     String(d.Get("action").(string)),
+		Direction:  String(d.Get("direction").(string)),
+		IPFamily:   String(d.Get("ip_family").(string)),
+		Protocol:   String(d.Get("protocol").(string)),
+		SourceIP:   String(d.Get("source_ip").(string)),
+		SourcePort: Int(d.Get("source_port").(int)),
+		DestIP:     String(d.Get("dest_ip").(string)),
+		DestPort:   Int(d.Get("dest_port").(int)),
 	}
 
 	client := meta.(*EnfClient).Client
