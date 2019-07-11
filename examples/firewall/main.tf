@@ -5,7 +5,7 @@ provider "xaptum" {
   password = "Test1234"
 }
 
-resource "xaptum_enf_firewall" "ex" {
+resource "xaptum_enf_firewall_rule" "ex" {
   network   = "2607:8f80:8080:8::/64"
   ip_family = "IP6"
 
