@@ -3,6 +3,7 @@ package enf
 import (
 	"context"
 	"net/http"
+	"strings"
 
 	"github.com/hashicorp/terraform/helper/schema"
 )
@@ -67,6 +68,15 @@ func resourceEnfFirewallRule() *schema.Resource {
 				Optional: true,
 				ForceNew: true,
 				Default:  0,
+			},
+		},
+		Importer: &schema.ResourceImporter{
+			State: func(d *schema.ResourceData, m interface{}) ([]*schema.ResourceData, error) {
+				id := d.Id()
+				s := strings.Split(id, ".")
+				d.Set("network", s[0])
+				d.SetId(s[1])
+				return []*schema.ResourceData{d}, nil
 			},
 		},
 	}
