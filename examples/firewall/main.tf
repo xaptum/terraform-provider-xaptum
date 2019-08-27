@@ -1,12 +1,9 @@
 provider "enf" {
-  domain_url = "https://demo.xaptum.io"
-
-  username = "xap@demo"
-  password = "Test1234"
+  domain_url = "https://dev.xaptum.io"
 }
 
 resource "enf_firewall_rule" "ex" {
-  network   = "2607:8f80:8080:8::/64"
+  network   = "fd00:8f80:8000:4::/64"
   ip_family = "IP6"
 
   priority    = 1
@@ -16,7 +13,7 @@ resource "enf_firewall_rule" "ex" {
 }
 
 resource "enf_firewall_rule" "ingress" {
-  network   = "2607:8f80:8080:8::/64"
+  network   = "fd00:8f80:8000:4::/64"
   ip_family = "IP6"
 
   priority    = 1
