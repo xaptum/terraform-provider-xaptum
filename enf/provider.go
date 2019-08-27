@@ -34,7 +34,7 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"xaptum_enf_firewall_rule": resourceEnfFirewallRule(),
+			"enf_firewall_rule": resourceEnfFirewallRule(),
 		},
 
 		ConfigureFunc: providerConfigure,
