@@ -3,6 +3,8 @@ package enf
 import (
 	"context"
 	"net/http"
+
+	"github.com/xaptum/go-enf/enf"
 )
 
 type Response struct {
@@ -36,16 +38,16 @@ type EnfClient struct {
 	DomainURL  string
 	HTTPClient *http.Client
 
-	Client *Client
+	Client *enf.Client
 }
 
 func (c *Config) Client() (interface{}, error) {
-	client, err := NewClient(c.DomainURL, nil)
+	client, err := enf.NewClient(c.DomainURL, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	authReq := &AuthRequest{Username: &c.Username, Password: &c.Password}
+	authReq := &enf.AuthRequest{Username: &c.Username, Password: &c.Password}
 	auth, _, err := client.Auth.Authenticate(context.Background(), authReq)
 	if err != nil {
 		return nil, err

@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/xaptum/go-enf/enf"
 )
 
 func resourceEnfFirewallRule() *schema.Resource {
@@ -85,16 +86,16 @@ func resourceEnfFirewallRule() *schema.Resource {
 func resourceEnfFirewallRuleCreate(d *schema.ResourceData, meta interface{}) error {
 	network := d.Get("network").(string)
 
-	params := &FirewallRuleRequest{
-		Priority:   Int(d.Get("priority").(int)),
-		Action:     String(d.Get("action").(string)),
-		Direction:  String(d.Get("direction").(string)),
-		IPFamily:   String(d.Get("ip_family").(string)),
-		Protocol:   String(d.Get("protocol").(string)),
-		SourceIP:   String(d.Get("source_ip").(string)),
-		SourcePort: Int(d.Get("source_port").(int)),
-		DestIP:     String(d.Get("dest_ip").(string)),
-		DestPort:   Int(d.Get("dest_port").(int)),
+	params := &enf.FirewallRuleRequest{
+		Priority:   enf.Int(d.Get("priority").(int)),
+		Action:     enf.String(d.Get("action").(string)),
+		Direction:  enf.String(d.Get("direction").(string)),
+		IPFamily:   enf.String(d.Get("ip_family").(string)),
+		Protocol:   enf.String(d.Get("protocol").(string)),
+		SourceIP:   enf.String(d.Get("source_ip").(string)),
+		SourcePort: enf.Int(d.Get("source_port").(int)),
+		DestIP:     enf.String(d.Get("dest_ip").(string)),
+		DestPort:   enf.Int(d.Get("dest_port").(int)),
 	}
 
 	client := meta.(*EnfClient).Client
