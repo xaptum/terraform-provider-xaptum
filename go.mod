@@ -8,5 +8,3 @@ require (
 	github.com/hashicorp/terraform v0.12.3
 	github.com/xaptum/go-enf v0.1.0
 )
-
-replace github.com/xaptum/go-enf => ../go-enf
