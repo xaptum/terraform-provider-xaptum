@@ -4,6 +4,8 @@
 XC_ARCH=${XC_ARCH:-"386 amd64"}
 XC_OS=${XC_OS:-"linux darwin windows"}
 
+VERSION=$(git describe)
+
 if ! which gox > /dev/null; then
     echo "-> installing gox..."
     go get -u github.com/mitchellh/gox
@@ -34,8 +36,8 @@ for PLATFORM in $(find ./pkg -mindepth 1 -maxdepth 1 -type d); do
 
     echo "--> ${OSARCH}"
     pushd ${PLATFORM} > /dev/null 2>&1
-    tar -czf ../dist/terraform-provider-enf_${OSARCH}.tar.gz ./*
-    zip -q ../dist/terraform-provider-enf_${OSARCH}.zip ./*
+    tar -czf ../dist/terraform-provider-enf_${VERSION}_${OSARCH}.tar.gz ./*
+    zip -q ../dist/terraform-provider-enf_${VERSION}_${OSARCH}.zip ./*
     popd >/dev/null 2>&1
 done
 
