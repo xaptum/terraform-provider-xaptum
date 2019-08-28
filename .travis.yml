@@ -19,6 +19,9 @@ matrix:
   - go: "1.12.x"
     name: "Code UnitTest"
     script: make test
+  - go: "1.12.x"
+    name: "Code BuildRelease"
+    script: make release
 
 install:
   - make tools
