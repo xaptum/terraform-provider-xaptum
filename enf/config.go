@@ -7,11 +7,6 @@ import (
 	"github.com/xaptum/go-enf/enf"
 )
 
-type Response struct {
-	Data []Data
-	Page Pages
-}
-
 type Data struct {
 	Username      string `json:"username"`
 	Token         string `json:"token"`
@@ -19,12 +14,6 @@ type Data struct {
 	Type          string `json:"type"`
 	DomainID      int    `json:"domain_id"`
 	DomainNetwork string `json:"domain_network"`
-}
-
-type Pages struct {
-	Curr int `json:"curr"`
-	Next int `json:"next"`
-	Prev int `json:"prev"`
 }
 
 type Config struct {
