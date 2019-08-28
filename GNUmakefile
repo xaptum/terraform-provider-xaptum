@@ -13,6 +13,9 @@ test: fmtcheck
 install: build
 	ln -s $(GOPATH)/bin/terraform-provider-enf $(HOME)/.terraform.d/plugins/terraform-provider-enf
 
+release: build
+	scripts/release.sh
+
 fmt:
 	@echo "==> Fixing source code with gofmt..."
 	gofmt -s -w ./$(PKG_NAME)
