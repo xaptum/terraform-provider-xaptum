@@ -23,8 +23,8 @@ type Data struct {
 
 type Pages struct {
 	Curr int `json:"curr"`
-	Next int `json: "next"`
-	Prev int `json: "prev"`
+	Next int `json:"next"`
+	Prev int `json:"prev"`
 }
 
 type Config struct {
