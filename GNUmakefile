@@ -10,6 +10,9 @@ build: fmtcheck
 test: fmtcheck
 	go test $(TEST) -timeout=30s -parallel=4
 
+install: build
+	ln -s $(GOPATH)/bin/terraform-provider-enf $(HOME)/.terraform.d/plugins/terraform-provider-enf
+
 fmt:
 	@echo "==> Fixing source code with gofmt..."
 	gofmt -s -w ./$(PKG_NAME)
@@ -55,4 +58,4 @@ test-compile:
 	fi
 	go test -c $(TEST) $(TESTARGS)
 
-.PHONY: build test fmt fmtcheck lint tools test-compile
+.PHONY: build test install fmt fmtcheck lint tools test-compile
