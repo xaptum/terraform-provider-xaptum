@@ -35,6 +35,7 @@ func Provider() terraform.ResourceProvider {
 
 		ResourcesMap: map[string]*schema.Resource{
 			"enf_firewall_rule": resourceEnfFirewallRule(),
+			"enf_network":       resourceEnfNetwork(),
 		},
 
 		ConfigureFunc: providerConfigure,

@@ -7,15 +7,6 @@ import (
 	"github.com/xaptum/go-enf/enf"
 )
 
-type Data struct {
-	Username      string `json:"username"`
-	Token         string `json:"token"`
-	UserID        int    `json:"user_id"`
-	Type          string `json:"type"`
-	DomainID      int    `json:"domain_id"`
-	DomainNetwork string `json:"domain_network"`
-}
-
 type Config struct {
 	Username  string
 	Password  string
@@ -26,8 +17,8 @@ type EnfClient struct {
 	ApiToken   string
 	DomainURL  string
 	HTTPClient *http.Client
-
-	Client *enf.Client
+	DomainID   int64
+	Client     *enf.Client
 }
 
 func (c *Config) Client() (interface{}, error) {
@@ -44,10 +35,10 @@ func (c *Config) Client() (interface{}, error) {
 
 	enfClient := &EnfClient{
 		ApiToken:   *auth.Token,
+		DomainID:   *auth.DomainID,
 		DomainURL:  c.DomainURL,
 		HTTPClient: &http.Client{},
-
-		Client: client,
+		Client:     client,
 	}
 
 	client.ApiToken = *auth.Token
