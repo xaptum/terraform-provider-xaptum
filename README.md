@@ -1,7 +1,7 @@
 # Terraform Provider for the Xaptum ENF #
 
 [![Release](https://img.shields.io/github/release/xaptum/terraform-provider-enf.svg)](https://github.com/xaptum/terraform-provider-enf/releases)
-[![Build Status](https://travis-ci.org/xaptum/terraform-provider-enf.svg?branch=master)](https://travis-ci.org/xaptum/terraform-provider-enf)
+[![Build Status](https://travis-ci.com/xaptum/terraform-provider-enf.svg?branch=master)](https://travis-ci.com/xaptum/terraform-provider-enf)
 
 This is a Terraform provider for managing ENF resources on the
 [Xaptum](https://www.xaptum.com) Edge Network Fabric (ENF), a secure
