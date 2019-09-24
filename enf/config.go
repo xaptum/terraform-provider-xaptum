@@ -14,7 +14,7 @@ type Config struct {
 }
 
 type EnfClient struct {
-	ApiToken   string
+	APIToken   string
 	DomainURL  string
 	HTTPClient *http.Client
 	DomainID   int64
@@ -34,14 +34,14 @@ func (c *Config) Client() (interface{}, error) {
 	}
 
 	enfClient := &EnfClient{
-		ApiToken:   *auth.Token,
+		APIToken:   *auth.Token,
 		DomainID:   *auth.DomainID,
 		DomainURL:  c.DomainURL,
 		HTTPClient: &http.Client{},
 		Client:     client,
 	}
 
-	client.ApiToken = *auth.Token
+	client.APIToken = *auth.Token
 
 	return enfClient, nil
 }
