@@ -1,4 +1,4 @@
-package enf
+package xaptum
 
 import (
 	"context"
@@ -11,7 +11,7 @@ import (
 	"github.com/xaptum/go-enf/enf"
 )
 
-func resourceEnfNetwork() *schema.Resource {
+func resourceXaptumNetwork() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceEnfNetworkCreate,
 		Read:   resourceEnfNetworkRead,

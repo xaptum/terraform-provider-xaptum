@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/hashicorp/terraform/plugin"
-	"github.com/xaptum/terraform-provider-enf/enf"
+	"github.com/xaptum/terraform-provider-xaptum/xaptum"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: enf.Provider})
+		ProviderFunc: xaptum.Provider})
 }

@@ -1,6 +1,6 @@
 TEST?=./...
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
-PKG_NAME=enf
+PKG_NAME=xaptum
 
 default: build
 
@@ -11,7 +11,7 @@ test: fmtcheck
 	go test $(TEST) -timeout=30s -parallel=4
 
 install: build
-	ln -s $(GOPATH)/bin/terraform-provider-enf $(HOME)/.terraform.d/plugins/terraform-provider-enf
+	ln -s $(GOPATH)/bin/terraform-provider-xaptum $(HOME)/.terraform.d/plugins/terraform-provider-xaptum
 
 release: build
 	scripts/release.sh
