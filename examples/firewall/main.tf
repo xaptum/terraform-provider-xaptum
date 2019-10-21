@@ -1,8 +1,8 @@
-provider "enf" {
+provider "xaptum" {
   domain_url = "https://dev.xaptum.io"
 }
 
-resource "enf_firewall_rule" "ex" {
+resource "xaptum_firewall_rule" "ex" {
   network   = "fd00:8f80:8000:4::/64"
   ip_family = "IP6"
 
@@ -12,7 +12,7 @@ resource "enf_firewall_rule" "ex" {
   action      = "ACCEPT"
 }
 
-resource "enf_firewall_rule" "ingress" {
+resource "xaptum_firewall_rule" "ingress" {
   network   = "fd00:8f80:8000:4::/64"
   ip_family = "IP6"
 

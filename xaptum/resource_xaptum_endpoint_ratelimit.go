@@ -1,4 +1,4 @@
-package enf
+package xaptum
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 	"github.com/xaptum/go-enf/enf"
 )
 
-func resourceEnfEndpointRateLimit() *schema.Resource {
+func resourceXaptumEndpointRateLimit() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceEnfEndpointRateLimitCreate,
 		Read:   resourceEnfEndpointRateLimitRead,

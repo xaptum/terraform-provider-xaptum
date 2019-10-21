@@ -1,4 +1,4 @@
-package enf
+package xaptum
 
 import (
 	"errors"
@@ -36,11 +36,11 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"enf_domain_ratelimit":   resourceEnfDomainRateLimit(),
-			"enf_endpoint_ratelimit": resourceEnfEndpointRateLimit(),
-			"enf_firewall_rule":      resourceEnfFirewallRule(),
-			"enf_network":            resourceEnfNetwork(),
-			"enf_network_ratelimit":  resourceEnfNetworkRateLimit(),
+			"xaptum_domain_ratelimit":   resourceXaptumDomainRateLimit(),
+			"xaptum_endpoint_ratelimit": resourceXaptumEndpointRateLimit(),
+			"xaptum_firewall_rule":      resourceXaptumFirewallRule(),
+			"xaptum_network":            resourceXaptumNetwork(),
+			"xaptum_network_ratelimit":  resourceXaptumNetworkRateLimit(),
 		},
 
 		ConfigureFunc: providerConfigure,

@@ -1,4 +1,4 @@
-package enf
+package xaptum
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 	"github.com/xaptum/go-enf/enf"
 )
 
-func resourceEnfFirewallRule() *schema.Resource {
+func resourceXaptumFirewallRule() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceEnfFirewallRuleCreate,
 		Read:   resourceEnfFirewallRuleRead,
