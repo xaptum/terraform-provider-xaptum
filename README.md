@@ -1,7 +1,7 @@
 # Terraform Provider for the Xaptum ENF #
 
-[![Release](https://img.shields.io/github/release/xaptum/terraform-provider-enf.svg)](https://github.com/xaptum/terraform-provider-enf/releases)
-[![Build Status](https://travis-ci.com/xaptum/terraform-provider-enf.svg?branch=master)](https://travis-ci.com/xaptum/terraform-provider-enf)
+[![Release](https://img.shields.io/github/release/xaptum/terraform-provider-xaptum.svg)](https://github.com/xaptum/terraform-provider-xaptum/releases)
+[![Build Status](https://travis-ci.com/xaptum/terraform-provider-xaptum.svg?branch=master)](https://travis-ci.com/xaptum/terraform-provider-xaptum)
 
 This is a Terraform provider for managing ENF resources on the
 [Xaptum](https://www.xaptum.com) Edge Network Fabric (ENF), a secure
@@ -9,7 +9,7 @@ overlay network for IoT.
 
 ## Installation ##
 
-1. Download the latest compiled binary from [GitHub releases](https://github.com/xaptum/terraform-provider-enf/releases).
+1. Download the latest compiled binary from [GitHub releases](https://github.com/xaptum/terraform-provider-xaptum/releases).
 
 1. Unzip/untar the archive.
 

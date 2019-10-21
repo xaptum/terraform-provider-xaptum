@@ -1,4 +1,4 @@
-module github.com/xaptum/terraform-provider-enf
+module github.com/xaptum/terraform-provider-xaptum
 
 go 1.12
 
