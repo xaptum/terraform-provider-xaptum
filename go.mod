@@ -9,5 +9,5 @@ require (
 	github.com/hashicorp/go-version v1.2.0 // indirect
 	github.com/hashicorp/terraform v0.12.3
 	github.com/mitchellh/gox v1.0.1 // indirect
-	github.com/xaptum/go-enf v0.2.2
+	github.com/xaptum/go-enf v0.3.0
 )
