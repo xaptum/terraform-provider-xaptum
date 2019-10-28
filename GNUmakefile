@@ -1,3 +1,4 @@
+GOPATH ?= $(HOME)/go
 TEST?=./...
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
 PKG_NAME=xaptum
@@ -11,7 +12,7 @@ test: fmtcheck
 	go test $(TEST) -timeout=30s -parallel=4
 
 install: build
-	ln -s $(GOPATH)/bin/terraform-provider-xaptum $(HOME)/.terraform.d/plugins/terraform-provider-xaptum
+	ln -fs $(GOPATH)/bin/terraform-provider-xaptum $(HOME)/.terraform.d/plugins/terraform-provider-xaptum
 
 release: build
 	scripts/release.sh
