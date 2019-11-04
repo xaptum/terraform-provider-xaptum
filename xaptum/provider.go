@@ -36,6 +36,7 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
+			"xaptum_domain":             resourceXaptumDomain(),
 			"xaptum_domain_ratelimit":   resourceXaptumDomainRateLimit(),
 			"xaptum_endpoint_ratelimit": resourceXaptumEndpointRateLimit(),
 			"xaptum_firewall_rule":      resourceXaptumFirewallRule(),
@@ -67,6 +68,23 @@ func validateRateLimitRequest(d *schema.ResourceData) error {
 		if packetsPerSecondIsSet || packetsBurstSizeIsSet || bytesPerSecondIsSet || bytesBurstSizeIsSet {
 			return errors.New("If inherit is true then no other rate limit values can be set")
 		}
+	}
+
+	return nil
+}
+
+func validateUpdateDomainRequest(d *schema.ResourceData) error {
+	nameHasChanged := d.HasChange("name")
+	typeHasChanged := d.HasChange("type")
+	adminEmailHasChanged := d.HasChange("admin_email")
+	adminNameHasChanged := d.HasChange("admin_name")
+	if nameHasChanged || typeHasChanged || adminEmailHasChanged || adminNameHasChanged {
+		return errors.New("Can only update status. name, type, admin_email, and admin_name cannot change")
+	}
+
+	status := d.Get("status").(string)
+	if status != "READY" && status != "ACTIVE" {
+		return errors.New("status must be either READY or ACTIVE")
 	}
 
 	return nil
