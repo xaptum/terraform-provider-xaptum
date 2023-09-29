@@ -6,8 +6,8 @@ require (
 	github.com/bflad/tfproviderlint v0.4.0
 	github.com/client9/misspell v0.3.4
 	github.com/golangci/golangci-lint v1.18.0
-	github.com/hashicorp/go-version v1.2.0 // indirect
-	github.com/hashicorp/terraform v0.12.3
-	github.com/mitchellh/gox v1.0.1 // indirect
+	github.com/hashicorp/terraform v0.12.17
+	github.com/stretchr/testify v1.8.2 // indirect
 	github.com/xaptum/go-enf v0.3.0
+	golang.org/x/crypto v0.6.0 // indirect
 )
